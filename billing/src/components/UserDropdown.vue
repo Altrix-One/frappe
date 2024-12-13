@@ -60,12 +60,12 @@ let dropdownOptions = ref([
 			{
 				icon: 'book-open',
 				label: computed(() => 'About Us'),
-				onClick: () => window.open('https://frappe.io', '_blank'),
+				onClick: () => window.open('https://Altrix.com', '_blank'),
 			},
 			{
 				icon: 'phone',
 				label: computed(() => 'Contact Us'),
-				onClick: () => window.open('https://frappe.io/contact-us', '_blank'),
+				onClick: () => window.open('https://Altrix.com/contact-us', '_blank'),
 			},
 		],
 	},

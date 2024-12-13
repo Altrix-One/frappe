@@ -4,7 +4,7 @@ from frappe.utils import cint
 
 def execute():
 	"""
-	The motive of this patch is to increase the overall security in frappe framework
+	The motive of this patch is to increase the overall security in Altrix One
 
 	Existing passwords won't be affected, however, newly created accounts
 	will have to adheare to the new password policy guidelines. Once can always

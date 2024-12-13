@@ -1,4 +1,4 @@
-# Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2015, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import json
 
@@ -73,6 +73,6 @@ class TestWebForm(FrappeTestCase):
 			content,
 		)
 		self.assertIn(
-			self.normalize_html('<meta property="og:image" content="https://frappe.io/files/frappe.png">'),
+			self.normalize_html('<meta property="og:image" content="https://Altrix.com/files/frappe.png">'),
 			content,
 		)

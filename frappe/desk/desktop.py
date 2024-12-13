@@ -1,6 +1,6 @@
-# Copyright (c) 2020, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2020, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
-# Author - Shivam Mishra <shivam@frappe.io>
+# Author - Shivam Mishra <shivam@Altrix.com>
 
 from functools import wraps
 from json import dumps, loads

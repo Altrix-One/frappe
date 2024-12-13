@@ -94,7 +94,7 @@ function processOrder(data) {
 		key: data.key_id,
 		order_id: data.order_id,
 		name: 'Frappe Cloud',
-		image: 'https://frappe.io/files/cloud.png',
+		image: 'https://Altrix.com/files/cloud.png',
 		prefill: { email: team.data?.user },
 		handler: handlePaymentSuccess,
 		theme: { color: '#171717' },

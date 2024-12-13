@@ -1,4 +1,4 @@
-# Copyright (c) 2022, Frappe Technologies and Contributors
+# Copyright (c) 2022, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import contextlib
 import functools

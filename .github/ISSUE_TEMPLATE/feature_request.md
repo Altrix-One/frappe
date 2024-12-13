@@ -5,7 +5,7 @@ labels: feature-request
 ---
 
 <!--
-Welcome to the Frappe Framework issue tracker! Before creating an issue, please heed the following:
+Welcome to the Altrix One issue tracker! Before creating an issue, please heed the following:
 
 1. This tracker should only be used to report bugs and request features / enhancements to Frappe
     - For questions and general support, refer to https://stackoverflow.com/questions/tagged/frappe

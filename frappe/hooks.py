@@ -3,14 +3,14 @@ import os
 from . import __version__ as app_version
 
 app_name = "frappe"
-app_title = "Frappe Framework"
-app_publisher = "Frappe Technologies"
+app_title = "Altrix One"
+app_publisher = "Altrix Technologies"
 app_description = "Full stack web framework with Python, Javascript, MariaDB, Redis, Node"
 app_license = "MIT"
 app_logo_url = "/assets/frappe/images/frappe-framework-logo.svg"
 develop_version = "15.x.x-develop"
 
-app_email = "developers@frappe.io"
+app_email = "developers@Altrix.com"
 
 before_install = "frappe.utils.install.before_install"
 after_install = "frappe.utils.install.after_install"
@@ -544,7 +544,7 @@ standard_help_items = [
 	{
 		"item_label": "Frappe Support",
 		"item_type": "Route",
-		"route": "https://frappe.io/support",
+		"route": "https://Altrix.com/support",
 		"is_standard": 1,
 	},
 ]

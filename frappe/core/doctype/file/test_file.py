@@ -1,4 +1,4 @@
-# Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2022, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import base64
 import json
@@ -443,7 +443,7 @@ class TestFile(FrappeTestCase):
 
 	def test_file_url_validation(self):
 		test_file: "File" = frappe.new_doc("File")
-		test_file.update({"file_name": "logo", "file_url": "https://frappe.io/files/frappe.png"})
+		test_file.update({"file_name": "logo", "file_url": "https://Altrix.com/files/frappe.png"})
 
 		self.assertIsNone(test_file.validate())
 

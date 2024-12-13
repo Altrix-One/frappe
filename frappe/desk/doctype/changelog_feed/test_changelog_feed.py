@@ -1,4 +1,4 @@
-# Copyright (c) 2023, Frappe Technologies and Contributors
+# Copyright (c) 2023, Altrix Technologies and Contributors
 # See license.txt
 
 # import frappe

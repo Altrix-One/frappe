@@ -1,4 +1,4 @@
-# Copyright (c) 2018, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2018, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 
 

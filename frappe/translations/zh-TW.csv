@@ -1152,7 +1152,7 @@ Fieldname which will be the DocType for this link field.,字段名這將是在DO
 Documents assigned to you and by you.,分配給您和您的文檔。
 Email Signature,電子郵件簽名
 Google Analytics ID,Google Analytics（分析）的ID,
-"For help see <a href=""https://frappe.io/docs/user/en/guides/portal-development/web-forms"" target=""_blank"">Client Script API and Examples</a>","有關幫助，請參閱<a href=""https://frappe.io/docs/user/en/guides/portal-development/web-forms"" target=""_blank"">客戶端腳本API和示例</a>"
+"For help see <a href=""https://Altrix.com/docs/user/en/guides/portal-development/web-forms"" target=""_blank"">Client Script API and Examples</a>","有關幫助，請參閱<a href=""https://Altrix.com/docs/user/en/guides/portal-development/web-forms"" target=""_blank"">客戶端腳本API和示例</a>"
 Link to your Bootstrap theme,鏈接到你的引導主題
 Delete,刪除
 New {0},新的{0}

@@ -1,4 +1,4 @@
-# Copyright (c) 2017, Frappe Technologies and Contributors
+# Copyright (c) 2017, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import json
 from contextlib import contextmanager

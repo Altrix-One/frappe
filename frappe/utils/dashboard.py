@@ -1,4 +1,4 @@
-# Copyright (c) 2019, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2019, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import os
 from functools import wraps

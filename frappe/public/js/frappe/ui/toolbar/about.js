@@ -1,7 +1,7 @@
 frappe.provide("frappe.ui.misc");
 frappe.ui.misc.about = function () {
 	if (!frappe.ui.misc.about_dialog) {
-		var d = new frappe.ui.Dialog({ title: __("Frappe Framework") });
+		var d = new frappe.ui.Dialog({ title: __("Altrix One") });
 
 		$(d.body).html(
 			repl(
@@ -25,7 +25,7 @@ frappe.ui.misc.about = function () {
 					<h4>${__("Installed Apps")}</h4>
 					<div id='about-app-versions'>${__("Loading versions...")}</div>
 					<hr>
-					<p class='text-muted'>${__("&copy; Frappe Technologies Pvt. Ltd. and contributors")} </p>
+					<p class='text-muted'>${__("&copy; Altrix Technologies Pvt. Ltd. and contributors")} </p>
 					</div>`,
 				frappe.app
 			)

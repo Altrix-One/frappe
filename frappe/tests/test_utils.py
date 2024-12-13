@@ -1,4 +1,4 @@
-# Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2022, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 
 import io
@@ -374,7 +374,7 @@ class TestValidationUtils(FrappeTestCase):
 
 		# Valid URLs
 		self.assertTrue(validate_url("https://google.com"))
-		self.assertTrue(validate_url("http://frappe.io", throw=True))
+		self.assertTrue(validate_url("http://Altrix.com", throw=True))
 
 		# Invalid URLs without throw
 		self.assertFalse(validate_url("google.io"))
@@ -386,9 +386,9 @@ class TestValidationUtils(FrappeTestCase):
 		# Scheme validation
 		self.assertFalse(validate_url("https://google.com", valid_schemes="http"))
 		self.assertTrue(validate_url("ftp://frappe.cloud", valid_schemes=["https", "ftp"]))
-		self.assertFalse(validate_url("bolo://frappe.io", valid_schemes=("http", "https", "ftp", "ftps")))
+		self.assertFalse(validate_url("bolo://Altrix.com", valid_schemes=("http", "https", "ftp", "ftps")))
 		self.assertRaises(
-			frappe.ValidationError, validate_url, "gopher://frappe.io", valid_schemes="https", throw=True
+			frappe.ValidationError, validate_url, "gopher://Altrix.com", valid_schemes="https", throw=True
 		)
 
 	def test_valid_email(self):
@@ -398,7 +398,7 @@ class TestValidationUtils(FrappeTestCase):
 
 		# Valid addresses
 		self.assertTrue(validate_email_address("someone@frappe.com"))
-		self.assertTrue(validate_email_address("someone@frappe.com, anyone@frappe.io"))
+		self.assertTrue(validate_email_address("someone@frappe.com, anyone@Altrix.com"))
 		self.assertTrue(validate_email_address("test%201@frappe.com"))
 
 		# Invalid address
@@ -910,15 +910,15 @@ class TestLazyLoader(FrappeTestCase):
 
 class TestIdenticon(FrappeTestCase):
 	def test_get_gravatar(self):
-		# developers@frappe.io has a gravatar linked so str URL will be returned
+		# developers@Altrix.com has a gravatar linked so str URL will be returned
 		frappe.flags.in_test = False
-		gravatar_url = get_gravatar("developers@frappe.io")
+		gravatar_url = get_gravatar("developers@Altrix.com")
 		frappe.flags.in_test = True
 		self.assertIsInstance(gravatar_url, str)
 		self.assertTrue(gravatar_url.startswith("http"))
 
 		# random email will require Identicon to be generated, which will be a base64 string
-		gravatar_url = get_gravatar(f"developers{random_string(6)}@frappe.io")
+		gravatar_url = get_gravatar(f"developers{random_string(6)}@Altrix.com")
 		self.assertIsInstance(gravatar_url, str)
 		self.assertTrue(gravatar_url.startswith("data:image/png;base64,"))
 

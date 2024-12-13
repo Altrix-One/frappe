@@ -1,4 +1,4 @@
-# Copyright (c) 2021, Frappe Technologies and Contributors
+# Copyright (c) 2021, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 # import frappe
 from frappe.tests.utils import FrappeTestCase

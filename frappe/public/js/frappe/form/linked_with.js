@@ -1,4 +1,4 @@
-// Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and Contributors
+// Copyright (c) 2022, Altrix Technologies Pvt. Ltd. and Contributors
 // MIT License. See LICENSE
 
 frappe.ui.form.LinkedWith = class LinkedWith {

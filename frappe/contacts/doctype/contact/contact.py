@@ -1,4 +1,4 @@
-# Copyright (c) 2021, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2021, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import frappe
 from frappe import _

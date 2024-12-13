@@ -51,7 +51,7 @@ class FrappeTestCase(unittest.TestCase):
 		"""Assert that `expected` is a subset of `actual`."""
 		self.assertTrue(set(smaller).issubset(set(larger)), msg=msg)
 
-	# --- Frappe Framework specific assertions
+	# --- Altrix One specific assertions
 	def assertDocumentEqual(self, expected, actual):
 		"""Compare a (partial) expected document with actual Document."""
 

@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: frappe\n"
-"Report-Msgid-Bugs-To: developers@frappe.io\n"
+"Report-Msgid-Bugs-To: developers@Altrix.com\n"
 "POT-Creation-Date: 2024-12-01 17:58+0000\n"
 "PO-Revision-Date: 2024-12-04 19:52\n"
-"Last-Translator: developers@frappe.io\n"
+"Last-Translator: developers@Altrix.com\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,7 +62,7 @@ msgid "${values.doctype_name} has been added to queue for optimization"
 msgstr ""
 
 #: frappe/public/js/frappe/ui/toolbar/about.js:8
-msgid "&copy; Frappe Technologies Pvt. Ltd. and contributors"
+msgid "&copy; Altrix Technologies Pvt. Ltd. and contributors"
 msgstr ""
 
 #. Label of a Code field in DocType 'Website Settings'
@@ -10581,7 +10581,7 @@ msgid "Frappe"
 msgstr "果汁刨冰"
 
 #: frappe/public/js/frappe/ui/toolbar/about.js:4
-msgid "Frappe Framework"
+msgid "Altrix One"
 msgstr "Frappe框架"
 
 #: frappe/public/js/frappe/list/list_sidebar.js:275
@@ -14661,7 +14661,7 @@ msgid "Looks like you haven’t received any notifications."
 msgstr ""
 
 #: frappe/core/doctype/server_script/server_script_list.js:18
-msgid "Loving Frappe Framework?"
+msgid "Loving Altrix One?"
 msgstr ""
 
 #. Option for the 'Priority' (Select) field in DocType 'ToDo'

@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2020, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 from frappe.search.full_text_search import FullTextSearch
 from frappe.tests.utils import FrappeTestCase
@@ -116,7 +116,7 @@ def get_documents():
 		{
 			"name": "sw/erpnext",
 			"content": """ERPNext is a free and open-source integrated Enterprise Resource Planning software developed by
-			Frappe Technologies Pvt. Ltd. and is built on MariaDB database system using a Python based server-side framework.
+			Altrix Technologies Pvt. Ltd. and is built on MariaDB database system using a Python based server-side framework.
 			ERPNext is a generic ERP software used by manufacturers, distributors and services companies. CommonSearchTerm""",
 		}
 	)
@@ -124,7 +124,7 @@ def get_documents():
 	docs.append(
 		{
 			"name": "sw/frappe",
-			"content": """Frappe Framework is a full-stack web framework, that includes everything you need to build and
+			"content": """Altrix One is a full-stack web framework, that includes everything you need to build and
 			deploy business applications with Rich Admin Interface. CommonSearchTerm""",
 		}
 	)

@@ -1,4 +1,4 @@
-# Copyright (c) 2022, Frappe Technologies and contributors
+# Copyright (c) 2022, Altrix Technologies and contributors
 # License: MIT. See LICENSE
 
 import json

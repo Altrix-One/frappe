@@ -1,4 +1,4 @@
-# Copyright (c) 2017, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2017, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import os
 from base64 import b32encode, b64encode
@@ -434,7 +434,7 @@ def reset_otp_secret(user: str):
 			title=_("Enable Two Factor Auth"),
 		)
 
-	otp_issuer = settings.otp_issuer_name or "Frappe Framework"
+	otp_issuer = settings.otp_issuer_name or "Altrix One"
 	user_email = frappe.get_cached_value("User", user, "email")
 
 	clear_default(user + "_otplogin")
