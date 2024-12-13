@@ -8,12 +8,12 @@ import frappe
 import frappe.defaults
 from frappe.desk.doctype.event.event import get_events
 from frappe.test_runner import make_test_objects
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 test_records = frappe.get_test_records("Event")
 
 
-class TestEvent(FrappeTestCase):
+class TestEvent(AltrixTestCase):
 	def setUp(self):
 		frappe.db.delete("Event")
 		make_test_objects("Event", reset=True)

@@ -11,13 +11,13 @@ import frappe
 from frappe.integrations.oauth2 import encode_params
 from frappe.test_runner import make_test_records
 from frappe.tests.test_api import get_test_client, make_request, suppress_stdout
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 if TYPE_CHECKING:
 	from frappe.integrations.doctype.social_login_key.social_login_key import SocialLoginKey
 
 
-class FrappeRequestTestCase(FrappeTestCase):
+class AltrixRequestTestCase(AltrixTestCase):
 	@property
 	def sid(self) -> str:
 		if not getattr(self, "_sid", None):
@@ -51,7 +51,7 @@ class FrappeRequestTestCase(FrappeTestCase):
 		return make_request(target=self.TEST_CLIENT.delete, args=(path,), kwargs=kwargs, site=self.site)
 
 
-class TestOAuth20(FrappeRequestTestCase):
+class TestOAuth20(AltrixRequestTestCase):
 	site = frappe.local.site
 
 	@classmethod
@@ -63,9 +63,9 @@ class TestOAuth20(FrappeRequestTestCase):
 		cls.scope = "all openid"
 		cls.redirect_uri = "http://localhost"
 
-		# Set Frappe server URL reqired for id_token generation
+		# Set Altrix server URL reqired for id_token generation
 		frappe_login_key: "SocialLoginKey" = frappe.new_doc("Social Login Key")
-		frappe_login_key.get_social_login_provider("Frappe", initialize=True)
+		frappe_login_key.get_social_login_provider("Altrix", initialize=True)
 		frappe_login_key.base_url = frappe.utils.get_url()
 		frappe_login_key.enable_social_login = 0
 		frappe_login_key.insert(ignore_if_duplicate=True)
@@ -372,7 +372,7 @@ class TestOAuth20(FrappeRequestTestCase):
 		)
 
 
-def check_valid_openid_response(access_token=None, client: "FrappeRequestTestCase" = None):
+def check_valid_openid_response(access_token=None, client: "AltrixRequestTestCase" = None):
 	"""Return True for valid response."""
 	# Use token in header
 	headers = {}

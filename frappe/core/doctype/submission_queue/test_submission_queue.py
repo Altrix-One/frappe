@@ -5,14 +5,14 @@ import time
 import typing
 
 import frappe
-from frappe.tests.utils import FrappeTestCase, timeout
+from frappe.tests.utils import AltrixTestCase, timeout
 from frappe.utils.background_jobs import get_queue
 
 if typing.TYPE_CHECKING:
 	from rq.job import Job
 
 
-class TestSubmissionQueue(FrappeTestCase):
+class TestSubmissionQueue(AltrixTestCase):
 	queue = get_queue(qtype="default")
 
 	@timeout(seconds=20)

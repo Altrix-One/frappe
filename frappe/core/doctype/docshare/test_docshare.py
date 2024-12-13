@@ -4,12 +4,12 @@
 import frappe
 import frappe.share
 from frappe.automation.doctype.auto_repeat.test_auto_repeat import create_submittable_doctype
-from frappe.tests.utils import FrappeTestCase, change_settings
+from frappe.tests.utils import AltrixTestCase, change_settings
 
 test_dependencies = ["User"]
 
 
-class TestDocShare(FrappeTestCase):
+class TestDocShare(AltrixTestCase):
 	def setUp(self):
 		self.user = "test@example.com"
 		self.event = frappe.get_doc(

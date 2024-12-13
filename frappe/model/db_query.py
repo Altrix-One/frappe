@@ -617,7 +617,7 @@ class DatabaseQuery:
 		Example:
 		        - User has read permission only on `title` for DocType `Note`
 		        - Query: fields=["*"]
-		        - Result: fields=["title", ...] // will also include Frappe's meta field like `name`, `owner`, etc.
+		        - Result: fields=["title", ...] // will also include Altrix's meta field like `name`, `owner`, etc.
 		"""
 		from frappe.desk.reportview import extract_fieldnames
 

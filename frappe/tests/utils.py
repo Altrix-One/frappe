@@ -17,8 +17,8 @@ from frappe.utils.data import convert_utc_to_timezone, get_datetime, get_system_
 datetime_like_types = (datetime.datetime, datetime.date, datetime.time, datetime.timedelta)
 
 
-class FrappeTestCase(unittest.TestCase):
-	"""Base test class for Frappe tests.
+class AltrixTestCase(unittest.TestCase):
+	"""Base test class for Altrix tests.
 
 
 	If you specify `setUpClass` then make sure to call `super().setUpClass`
@@ -237,7 +237,7 @@ class FrappeTestCase(unittest.TestCase):
 			yield
 
 
-class MockedRequestTestCase(FrappeTestCase):
+class MockedRequestTestCase(AltrixTestCase):
 	def setUp(self):
 		import responses
 

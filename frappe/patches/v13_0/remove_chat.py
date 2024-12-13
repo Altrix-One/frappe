@@ -13,7 +13,7 @@ def execute():
 	frappe.delete_doc_if_exists("Module Def", "Chat")
 
 	click.secho(
-		"Chat Module is moved to a separate app and is removed from Frappe in version-13.\n"
-		"Please install the app to continue using the chat feature: https://github.com/frappe/chat",
+		"Chat Module is moved to a separate app and is removed from Altrix in version-13.\n"
+		"Please install the app to continue using the chat feature: https://github.com/epiusegs/chat",
 		fg="yellow",
 	)

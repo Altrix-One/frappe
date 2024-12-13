@@ -4,12 +4,12 @@ import frappe
 from frappe.core.doctype.doctype.doctype import clear_permissions_cache
 from frappe.model.db_query import DatabaseQuery
 from frappe.permissions import add_permission, reset_perms
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 test_dependencies = ["User"]
 
 
-class TestToDo(FrappeTestCase):
+class TestToDo(AltrixTestCase):
 	def test_delete(self):
 		todo = frappe.get_doc(
 			dict(doctype="ToDo", description="test todo", assigned_by="Administrator")

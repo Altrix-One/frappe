@@ -4,10 +4,10 @@ import time
 
 import frappe
 from frappe.auth import CookieManager, LoginManager
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestActivityLog(FrappeTestCase):
+class TestActivityLog(AltrixTestCase):
 	def setUp(self) -> None:
 		frappe.set_user("Administrator")
 

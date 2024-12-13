@@ -2,10 +2,10 @@
 # License: MIT. See LICENSE
 import frappe
 from frappe import _
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestTranslation(FrappeTestCase):
+class TestTranslation(AltrixTestCase):
 	def setUp(self):
 		frappe.db.delete("Translation")
 

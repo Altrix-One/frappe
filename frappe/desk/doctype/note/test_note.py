@@ -2,12 +2,12 @@
 # License: MIT. See LICENSE
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 test_records = frappe.get_test_records("Note")
 
 
-class TestNote(FrappeTestCase):
+class TestNote(AltrixTestCase):
 	def insert_note(self):
 		frappe.db.delete("Version")
 		frappe.db.delete("Note")

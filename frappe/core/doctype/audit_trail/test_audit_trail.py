@@ -2,10 +2,10 @@
 # See license.txt
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestAuditTrail(FrappeTestCase):
+class TestAuditTrail(AltrixTestCase):
 	def setUp(self):
 		self.child_doctype = create_custom_child_doctype()
 		self.custom_doctype = create_custom_doctype()

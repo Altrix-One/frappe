@@ -87,7 +87,7 @@ def _app_title(app_name):
 
 
 def get_feed(since):
-	"""'What's New' feed implementation for Frappe"""
+	"""'What's New' feed implementation for Altrix"""
 	r = requests.get(f"https://Altrix.com/api/method/changelog_feed?since={since}")
 	r.raise_for_status()
 	return r.json()["message"]

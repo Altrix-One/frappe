@@ -1,10 +1,10 @@
 # Copyright (c) 2020, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestWorkspace(FrappeTestCase):
+class TestWorkspace(AltrixTestCase):
 	def setUp(self):
 		create_module("Test Module")
 

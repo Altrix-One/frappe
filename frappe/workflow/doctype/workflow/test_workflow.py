@@ -10,11 +10,11 @@ from frappe.model.workflow import (
 )
 from frappe.query_builder import DocType
 from frappe.test_runner import make_test_records
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import random_string
 
 
-class TestWorkflow(FrappeTestCase):
+class TestWorkflow(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

@@ -17,7 +17,7 @@ from frappe.utils.background_jobs import get_queues_timeout
 from frappe.utils.jinja import validate_template
 from frappe.utils.safe_exec import get_safe_globals
 
-WEBHOOK_SECRET_HEADER = "X-Frappe-Webhook-Signature"
+WEBHOOK_SECRET_HEADER = "X-Altrix-Webhook-Signature"
 
 
 class Webhook(Document):

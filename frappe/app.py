@@ -168,7 +168,7 @@ def init_request(request):
 
 	frappe.local.is_ajax = frappe.get_request_header("X-Requested-With") == "XMLHttpRequest"
 
-	site = _site or request.headers.get("X-Frappe-Site-Name") or get_site_name(request.host)
+	site = _site or request.headers.get("X-Altrix-Site-Name") or get_site_name(request.host)
 	frappe.init(site=site, sites_path=_sites_path, force=True)
 
 	if not (frappe.local.conf and frappe.local.conf.db_name):
@@ -246,7 +246,7 @@ def process_response(response):
 		response.headers.extend(frappe.local.rate_limiter.headers())
 
 	if trace_id := frappe.monitor.get_trace_id():
-		response.headers.extend({"X-Frappe-Request-Id": trace_id})
+		response.headers.extend({"X-Altrix-Request-Id": trace_id})
 
 	# CORS headers
 	if hasattr(frappe.local, "conf"):
@@ -428,7 +428,7 @@ if sentry_dsn := os.getenv("FRAPPE_SENTRY_DSN"):
 	from sentry_sdk.integrations.modules import ModulesIntegration
 	from sentry_sdk.integrations.wsgi import SentryWsgiMiddleware
 
-	from frappe.utils.sentry import FrappeIntegration, before_send
+	from frappe.utils.sentry import AltrixIntegration, before_send
 
 	integrations = [
 		AtexitIntegration(),
@@ -442,7 +442,7 @@ if sentry_dsn := os.getenv("FRAPPE_SENTRY_DSN"):
 	kwargs = {}
 
 	if os.getenv("ENABLE_SENTRY_DB_MONITORING"):
-		integrations.append(FrappeIntegration())
+		integrations.append(AltrixIntegration())
 		experiments["record_sql_params"] = True
 
 	if tracing_sample_rate := os.getenv("SENTRY_TRACING_SAMPLE_RATE"):
@@ -532,7 +532,7 @@ re.purge()
 # Calling gc.freeze() moves all the objects imported so far into permanant generation and hence
 # doesn't mutate `PyGC_Head`
 #
-# Refer to issue for more info: https://github.com/frappe/frappe/issues/18927
+# Refer to issue for more info: https://github.com/epiusegs/frappe/issues/18927
 if frappe._tune_gc:
 	gc.collect()  # clean up any garbage created so far before freeze
 	gc.freeze()

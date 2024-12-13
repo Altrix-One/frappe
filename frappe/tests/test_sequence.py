@@ -1,8 +1,8 @@
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestSequence(FrappeTestCase):
+class TestSequence(AltrixTestCase):
 	def generate_sequence_name(self) -> str:
 		return self._testMethodName + "_" + frappe.generate_hash(length=5)
 

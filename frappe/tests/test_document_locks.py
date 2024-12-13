@@ -1,11 +1,11 @@
 # Copyright (c) 2015, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils.data import add_to_date, today
 
 
-class TestDocumentLocks(FrappeTestCase):
+class TestDocumentLocks(AltrixTestCase):
 	def test_locking(self):
 		todo = frappe.get_doc(dict(doctype="ToDo", description="test")).insert()
 		todo_1 = frappe.get_doc("ToDo", todo.name)

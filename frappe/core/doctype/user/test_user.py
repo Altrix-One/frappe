@@ -20,17 +20,17 @@ from frappe.core.doctype.user.user import (
 	verify_password,
 )
 from frappe.desk.notifications import extract_mentions
-from frappe.frappeclient import FrappeClient
+from frappe.frappeclient import AltrixClient
 from frappe.model.delete_doc import delete_doc
-from frappe.tests.test_api import FrappeAPITestCase
-from frappe.tests.utils import FrappeTestCase, change_settings
+from frappe.tests.test_api import AltrixAPITestCase
+from frappe.tests.utils import AltrixTestCase, change_settings
 from frappe.utils import get_url
 
 user_module = frappe.core.doctype.user.user
 test_records = frappe.get_test_records("User")
 
 
-class TestUser(FrappeTestCase):
+class TestUser(AltrixTestCase):
 	def tearDown(self):
 		# disable password strength test
 		frappe.db.set_single_value("System Settings", "enable_password_policy", 0)
@@ -288,7 +288,7 @@ class TestUser(FrappeTestCase):
 		key = f"rl:{data['cmd']}:{data['user']}"
 		frappe.cache.delete(key)
 
-		c = FrappeClient(url)
+		c = AltrixClient(url)
 		res1 = c.session.post(url, data=data, verify=c.verify, headers=c.headers)
 		res2 = c.session.post(url, data=data, verify=c.verify, headers=c.headers)
 		self.assertEqual(res1.status_code, 404)
@@ -458,7 +458,7 @@ class TestUser(FrappeTestCase):
 		)
 
 
-class TestImpersonation(FrappeAPITestCase):
+class TestImpersonation(AltrixAPITestCase):
 	def test_impersonation(self):
 		with test_user(roles=["System Manager"], commit=True) as user:
 			self.post(

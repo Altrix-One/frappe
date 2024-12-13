@@ -86,8 +86,8 @@ $.extend(frappe, {
 			data: opts.args,
 			dataType: "json",
 			headers: {
-				"X-Frappe-CSRF-Token": frappe.csrf_token,
-				"X-Frappe-CMD": (opts.args && opts.args.cmd) || "" || "",
+				"X-Altrix-CSRF-Token": frappe.csrf_token,
+				"X-Altrix-CMD": (opts.args && opts.args.cmd) || "" || "",
 			},
 			statusCode: opts.statusCode || {
 				404: function () {

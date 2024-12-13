@@ -7,11 +7,11 @@ from frappe.core.doctype.document_naming_settings.document_naming_settings impor
 	DocumentNamingSettings,
 )
 from frappe.model.naming import NamingSeries, get_default_naming_series
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import cint
 
 
-class TestNamingSeries(FrappeTestCase):
+class TestNamingSeries(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

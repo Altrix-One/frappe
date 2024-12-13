@@ -271,7 +271,7 @@ frappe.setup.SetupWizard = class SetupWizard extends frappe.ui.Slides {
 
 		this.$working_state = this.get_message(
 			__("Setting up your system"),
-			__("Starting Frappe ...")
+			__("Starting Altrix ...")
 		).appendTo(this.parent);
 
 		this.attach_abort_button();
@@ -363,7 +363,7 @@ frappe.setup.SetupWizardSlide = class SetupWizardSlide extends frappe.ui.Slide {
 	}
 };
 
-// Frappe slides settings
+// Altrix slides settings
 // ======================================================
 frappe.setup.slides_settings = [
 	{

@@ -3,12 +3,12 @@
 
 import frappe
 from frappe.test_runner import make_test_records
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 TEST_DOCTYPE = "Assignment Test"
 
 
-class TestAutoAssign(FrappeTestCase):
+class TestAutoAssign(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

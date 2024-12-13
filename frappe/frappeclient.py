@@ -1,5 +1,5 @@
 """
-FrappeClient is a library that helps you connect with other frappe systems
+AltrixClient is a library that helps you connect with other frappe systems
 """
 import base64
 import json
@@ -20,11 +20,11 @@ class SiteUnreachableError(Exception):
 	pass
 
 
-class FrappeException(Exception):
+class AltrixException(Exception):
 	pass
 
 
-class FrappeClient:
+class AltrixClient:
 	def __init__(
 		self,
 		url,
@@ -92,7 +92,7 @@ class FrappeClient:
 			self.headers.update(auth_header)
 
 			if self.frappe_authorization_source:
-				auth_source = {"Frappe-Authorization-Source": self.frappe_authorization_source}
+				auth_source = {"Altrix-Authorization-Source": self.frappe_authorization_source}
 				self.headers.update(auth_source)
 
 	def logout(self):
@@ -371,11 +371,11 @@ class FrappeClient:
 		if rjson and ("exc" in rjson) and rjson["exc"]:
 			try:
 				exc = json.loads(rjson["exc"])[0]
-				exc = "FrappeClient Request Failed\n\n" + exc
+				exc = "AltrixClient Request Failed\n\n" + exc
 			except Exception:
 				exc = rjson["exc"]
 
-			raise FrappeException(exc)
+			raise AltrixException(exc)
 		if "message" in rjson:
 			return rjson["message"]
 		elif "data" in rjson:
@@ -384,7 +384,7 @@ class FrappeClient:
 			return None
 
 
-class FrappeOAuth2Client(FrappeClient):
+class AltrixOAuth2Client(AltrixClient):
 	def __init__(self, url, access_token, verify=True):
 		import requests
 

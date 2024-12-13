@@ -9,7 +9,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.rate_limiter import rate_limit
 from frappe.utils.safe_exec import (
-	FrappeTransformer,
+	AltrixTransformer,
 	get_keys_for_autocomplete,
 	get_safe_globals,
 	is_safe_exec_enabled,
@@ -134,7 +134,7 @@ class ServerScript(Document):
 		from RestrictedPython import compile_restricted
 
 		try:
-			compile_restricted(self.script, policy=FrappeTransformer)
+			compile_restricted(self.script, policy=AltrixTransformer)
 		except Exception as e:
 			frappe.msgprint(str(e), title=_("Compilation warning"))
 
@@ -224,7 +224,7 @@ def setup_scheduler_events(script_name: str, frequency: str, cron_format: str | 
 
 	Args:
 	        script_name (str): Name of the Server Script document
-	        frequency (str): Event label compatible with the Frappe scheduler
+	        frequency (str): Event label compatible with the Altrix scheduler
 	"""
 	method = frappe.scrub(f"{script_name}-{frequency}")
 	scheduled_script = frappe.db.get_value("Scheduled Job Type", {"method": method})

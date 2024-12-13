@@ -21,7 +21,7 @@ frappe.ui.form.Controller = class FormController {
 	}
 };
 
-frappe.ui.form.Form = class FrappeForm {
+frappe.ui.form.Form = class AltrixForm {
 	constructor(doctype, parent, in_form, doctype_layout_name) {
 		this.docname = "";
 		this.doctype = doctype;

@@ -2,8 +2,8 @@ import time
 from unittest.mock import MagicMock
 
 import frappe
-from frappe.tests.test_api import FrappeAPITestCase
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.test_api import AltrixAPITestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils.caching import redis_cache, request_cache, site_cache
 
 CACHE_TTL = 4
@@ -34,7 +34,7 @@ def ping_with_ttl() -> str:
 	return frappe.local.site
 
 
-class TestCachingUtils(FrappeTestCase):
+class TestCachingUtils(AltrixTestCase):
 	def test_request_cache(self):
 		retval = []
 		acceptable_args = [
@@ -77,7 +77,7 @@ class TestCachingUtils(FrappeTestCase):
 		self.assertTrue(same_output_received())
 
 
-class TestSiteCache(FrappeAPITestCase):
+class TestSiteCache(AltrixAPITestCase):
 	def test_site_cache(self):
 		module = __name__
 		api_with_ttl = f"{module}.ping_with_ttl"
@@ -93,7 +93,7 @@ class TestSiteCache(FrappeAPITestCase):
 		self.assertEqual(register_with_external_service.call_count, 3)
 
 
-class TestRedisCache(FrappeAPITestCase):
+class TestRedisCache(AltrixAPITestCase):
 	def test_redis_cache(self):
 		function_call_count = 0
 
@@ -213,7 +213,7 @@ class TestRedisCache(FrappeAPITestCase):
 			self.assertEqual(function_call_count, 2)
 
 
-class TestDocumentCache(FrappeAPITestCase):
+class TestDocumentCache(AltrixAPITestCase):
 	TEST_DOCTYPE = "User"
 	TEST_DOCNAME = "Administrator"
 	TEST_FIELD = "middle_name"
@@ -260,7 +260,7 @@ class TestDocumentCache(FrappeAPITestCase):
 			frappe.get_cached_doc(self.TEST_DOCTYPE, self.TEST_DOCNAME)
 
 
-class TestRedisWrapper(FrappeAPITestCase):
+class TestRedisWrapper(AltrixAPITestCase):
 	def test_delete_keys(self):
 		prefix = "test_del_"
 

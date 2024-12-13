@@ -261,9 +261,9 @@ frappe.request.call = function (opts) {
 		async: opts.async,
 		headers: Object.assign(
 			{
-				"X-Frappe-CSRF-Token": frappe.csrf_token,
+				"X-Altrix-CSRF-Token": frappe.csrf_token,
 				Accept: "application/json",
-				"X-Frappe-CMD": (opts.args && opts.args.cmd) || "" || "",
+				"X-Altrix-CMD": (opts.args && opts.args.cmd) || "" || "",
 			},
 			opts.headers
 		),
@@ -271,7 +271,7 @@ frappe.request.call = function (opts) {
 	};
 
 	if (opts.args && opts.args.doctype) {
-		ajax_args.headers["X-Frappe-Doctype"] = encodeURIComponent(opts.args.doctype);
+		ajax_args.headers["X-Altrix-Doctype"] = encodeURIComponent(opts.args.doctype);
 	}
 
 	frappe.last_request = ajax_args.data;
@@ -542,7 +542,7 @@ frappe.request.report_error = function (xhr, request_opts) {
 		const code_block = (snippet) => "```\n" + snippet + "\n```";
 
 		let request_data = Object.assign({}, request_opts);
-		request_data.request_id = xhr.getResponseHeader("X-Frappe-Request-Id");
+		request_data.request_id = xhr.getResponseHeader("X-Altrix-Request-Id");
 		const traceback_info = [
 			"### App Versions",
 			code_block(JSON.stringify(frappe.boot.versions, null, "\t")),

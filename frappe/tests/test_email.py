@@ -14,12 +14,12 @@ from frappe.email.doctype.email_account.test_email_account import TestEmailAccou
 from frappe.email.doctype.email_queue.email_queue import QueueBuilder
 from frappe.query_builder.utils import db_type_is
 from frappe.tests.test_query_builder import run_only_if
-from frappe.tests.utils import FrappeTestCase, change_settings
+from frappe.tests.utils import AltrixTestCase, change_settings
 
 test_dependencies = ["Email Account"]
 
 
-class TestEmail(FrappeTestCase):
+class TestEmail(AltrixTestCase):
 	def setUp(self):
 		frappe.db.delete("Email Unsubscribe")
 		frappe.db.delete("Email Queue")
@@ -306,7 +306,7 @@ class TestEmail(FrappeTestCase):
 			email_account.enable_incoming = False
 
 
-class TestVerifiedRequests(FrappeTestCase):
+class TestVerifiedRequests(AltrixTestCase):
 	def test_round_trip(self):
 		from frappe.utils import set_request
 		from frappe.utils.verified_command import get_signed_params, verify_request
@@ -320,7 +320,7 @@ class TestVerifiedRequests(FrappeTestCase):
 		frappe.local.request = None
 
 
-class TestEmailIntegrationTest(FrappeTestCase):
+class TestEmailIntegrationTest(AltrixTestCase):
 	"""Sends email to local SMTP server and verifies correctness.
 
 	SMTP4Dev runs as a service in unit test CI job.
@@ -332,7 +332,7 @@ class TestEmailIntegrationTest(FrappeTestCase):
 	SMTP4DEV_WEB = "http://localhost:3000"
 
 	def setUp(self) -> None:
-		# Frappe code is configured to not attempting sending emails during test.
+		# Altrix code is configured to not attempting sending emails during test.
 		frappe.flags.testing_email = True
 		requests.delete(f"{self.SMTP4DEV_WEB}/api/Messages/*")
 		return super().setUp()

@@ -57,7 +57,7 @@ class SubmittableDocumentTree:
 		* Nodes are linked by doctype relationships like table, link and dynamic links.
 		* Node is referenced(linked) by many other documents and those are the child nodes.
 
-		NOTE: child document is a property of child node (not same as Frappe child docs of a table field).
+		NOTE: child document is a property of child node (not same as Altrix child docs of a table field).
 		"""
 		self.root_doctype = doctype
 		self.root_docname = name

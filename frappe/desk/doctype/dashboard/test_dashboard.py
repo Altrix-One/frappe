@@ -3,10 +3,10 @@
 import frappe
 from frappe.config import get_modules_from_all_apps_for_user
 from frappe.core.doctype.user.test_user import test_user
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestDashboard(FrappeTestCase):
+class TestDashboard(AltrixTestCase):
 	def test_permission_query(self):
 		for user in ["Administrator", "test@example.com"]:
 			with self.set_user(user):

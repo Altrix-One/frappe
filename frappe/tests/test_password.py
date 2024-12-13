@@ -3,11 +3,11 @@
 from cryptography.fernet import Fernet
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils.password import check_password, decrypt, encrypt, passlibctx, update_password
 
 
-class TestPassword(FrappeTestCase):
+class TestPassword(AltrixTestCase):
 	def setUp(self):
 		frappe.delete_doc("Email Account", "Test Email Account Password")
 		frappe.delete_doc("Email Account", "Test Email Account Password-new")

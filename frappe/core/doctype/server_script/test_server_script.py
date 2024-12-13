@@ -4,8 +4,8 @@ import requests
 
 import frappe
 from frappe.core.doctype.scheduled_job_type.scheduled_job_type import sync_jobs
-from frappe.frappeclient import FrappeClient, FrappeException
-from frappe.tests.utils import FrappeTestCase
+from frappe.frappeclient import AltrixClient, AltrixException
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import get_site_url
 
 scripts = [
@@ -107,7 +107,7 @@ doc.save()
 ]
 
 
-class TestServerScript(FrappeTestCase):
+class TestServerScript(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
@@ -289,19 +289,19 @@ frappe.qb.from_(todo).select(todo.name).where(todo.name == "{todo.name}").run()
 		frappe.db.commit()
 
 		site = frappe.utils.get_site_url(frappe.local.site)
-		client = FrappeClient(site)
+		client = AltrixClient(site)
 
 		# Exhaust rate limit
 		for _ in range(5):
 			client.get_api(script1.api_method)
 
-		self.assertRaises(FrappeException, client.get_api, script1.api_method)
+		self.assertRaises(AltrixException, client.get_api, script1.api_method)
 
 		# Exhaust rate limit
 		for _ in range(5):
 			client.get_api(script2.api_method)
 
-		self.assertRaises(FrappeException, client.get_api, script2.api_method)
+		self.assertRaises(AltrixException, client.get_api, script2.api_method)
 
 		script1.delete()
 		script2.delete()

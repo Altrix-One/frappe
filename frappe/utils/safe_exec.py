@@ -22,7 +22,7 @@ import frappe.utils
 import frappe.utils.data
 from frappe import _
 from frappe.core.utils import html2text
-from frappe.frappeclient import FrappeClient
+from frappe.frappeclient import AltrixClient
 from frappe.handler import execute_cmd
 from frappe.model.delete_doc import delete_doc
 from frappe.model.mapper import get_mapped_doc
@@ -57,7 +57,7 @@ class NamespaceDict(frappe._dict):
 		return ret
 
 
-class FrappeTransformer(RestrictingNodeTransformer):
+class AltrixTransformer(RestrictingNodeTransformer):
 	def check_name(self, node, name, *args, **kwargs):
 		if name == "_dict":
 			return
@@ -65,7 +65,7 @@ class FrappeTransformer(RestrictingNodeTransformer):
 		return super().check_name(node, name, *args, **kwargs)
 
 
-class FrappePrintCollector(PrintCollector):
+class AltrixPrintCollector(PrintCollector):
 	"""Collect written text, and return it when called."""
 
 	def _call_print(self, *objects, **kwargs):
@@ -91,7 +91,7 @@ def safe_exec(
 	if not is_safe_exec_enabled():
 		msg = _("Server Scripts are disabled. Please enable server scripts from bench configuration.")
 		docs_cta = _("Read the documentation to know more")
-		msg += f"<br><a href='https://frappeframework.com/docs/user/en/desk/scripting/server-script'>{docs_cta}</a>"
+		msg += f"<br><a href='https://altrixone.com/docs/user/en/desk/scripting/server-script'>{docs_cta}</a>"
 		frappe.throw(msg, ServerScriptNotEnabled, title="Server Scripts Disabled")
 
 	# build globals
@@ -112,7 +112,7 @@ def safe_exec(
 	with safe_exec_flags(), patched_qb():
 		# execute script compiled by RestrictedPython
 		exec(
-			compile_restricted(script, filename=filename, policy=FrappeTransformer),
+			compile_restricted(script, filename=filename, policy=AltrixTransformer),
 			exec_globals,
 			_locals,
 		)
@@ -134,7 +134,7 @@ def safe_eval(code, eval_globals=None, eval_locals=None):
 	eval_globals.update(WHITELISTED_SAFE_EVAL_GLOBALS)
 
 	return eval(
-		compile_restricted(code, filename="<safe_eval>", policy=FrappeTransformer, mode="eval"),
+		compile_restricted(code, filename="<safe_eval>", policy=AltrixTransformer, mode="eval"),
 		eval_globals,
 		eval_locals,
 	)
@@ -267,7 +267,7 @@ def get_safe_globals():
 			),
 			lang=getattr(frappe.local, "lang", "en"),
 		),
-		FrappeClient=FrappeClient,
+		AltrixClient=AltrixClient,
 		style=frappe._dict(border_color="#d1d8dd"),
 		get_toc=get_toc,
 		get_next_link=get_next_link,
@@ -296,7 +296,7 @@ def get_safe_globals():
 	out._getattr_ = _getattr_for_safe_exec
 
 	# Allow using `print()` calls with `safe_exec()`
-	out._print_ = FrappePrintCollector
+	out._print_ = AltrixPrintCollector
 
 	# allow iterators and list comprehension
 	out._getiter_ = iter

@@ -519,11 +519,11 @@ def evaluate_alert(doc: Document, alert, event):
 
 
 def get_context(doc):
-	Frappe = namedtuple("frappe", ["utils"])
+	Altrix = namedtuple("frappe", ["utils"])
 	return {
 		"doc": doc,
 		"nowdate": nowdate,
-		"frappe": Frappe(utils=get_safe_globals().get("frappe").get("utils")),
+		"frappe": Altrix(utils=get_safe_globals().get("frappe").get("utils")),
 	}
 
 

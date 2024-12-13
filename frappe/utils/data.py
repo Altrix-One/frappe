@@ -854,11 +854,11 @@ def cast_fieldtype(fieldtype, value, show_warning=True):
 
 
 def cast(fieldtype, value=None):
-	"""Cast the value to the Python native object of the Frappe fieldtype provided.
+	"""Cast the value to the Python native object of the Altrix fieldtype provided.
 	If value is None, the first/lowest value of the `fieldtype` will be returned.
 	If value can't be cast as fieldtype due to an invalid input, None will be returned.
 
-	Mapping of Python types => Frappe types:
+	Mapping of Python types => Altrix types:
 	        * str => ("Data", "Text", "Small Text", "Long Text", "Text Editor", "Select", "Link", "Dynamic Link")
 	        * float => ("Currency", "Float", "Percent")
 	        * int => ("Int", "Check")
@@ -2183,7 +2183,7 @@ class UnicodeWithAttrs(str):
 
 def format_timedelta(o: datetime.timedelta | str) -> str:
 	# MariaDB allows a wide range - https://mariadb.com/kb/en/time/
-	# but Frappe doesn't - I think via babel : only allows 0..23 range for hour
+	# but Altrix doesn't - I think via babel : only allows 0..23 range for hour
 	if isinstance(o, datetime.timedelta):
 		total_seconds = o.total_seconds()
 	else:

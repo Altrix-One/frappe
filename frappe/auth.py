@@ -85,7 +85,7 @@ class HTTPRequest:
 			or not frappe.session
 			or not (saved_token := frappe.session.data.csrf_token)
 			or (
-				(frappe.get_request_header("X-Frappe-CSRF-Token") or frappe.form_dict.pop("csrf_token", None))
+				(frappe.get_request_header("X-Altrix-CSRF-Token") or frappe.form_dict.pop("csrf_token", None))
 				== saved_token
 			)
 		):
@@ -666,7 +666,7 @@ def validate_auth_via_api_keys(authorization_header):
 
 	try:
 		auth_type, auth_token = authorization_header
-		authorization_source = frappe.get_request_header("Frappe-Authorization-Source")
+		authorization_source = frappe.get_request_header("Altrix-Authorization-Source")
 		if auth_type.lower() == "basic":
 			api_key, api_secret = frappe.safe_decode(base64.b64decode(auth_token)).split(":")
 			validate_api_key_secret(api_key, api_secret, authorization_source)

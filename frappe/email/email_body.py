@@ -312,7 +312,7 @@ class EMail:
 			"Date": email.utils.formatdate(),
 			"Reply-To": self.reply_to if self.reply_to else None,
 			"CC": ", ".join(self.cc) if self.cc and self.expose_recipients == "header" else None,
-			"X-Frappe-Site": get_url(),
+			"X-Altrix-Site": get_url(),
 		}
 
 		# reset headers as values may be changed.

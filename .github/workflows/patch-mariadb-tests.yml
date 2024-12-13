@@ -111,12 +111,12 @@ jobs:
         run: |
           cd ~/frappe-bench/
           sed -i 's/^worker:/# worker:/g' Procfile
-          wget https://frappeframework.com/files/v13-frappe.sql.gz
+          wget https://altrixone.com/files/v13-frappe.sql.gz
           bench --site test_site --force restore ~/frappe-bench/v13-frappe.sql.gz
 
           source env/bin/activate
           cd apps/frappe/
-          git remote set-url upstream https://github.com/frappe/frappe.git
+          git remote set-url upstream https://github.com/epiusegs/frappe.git
 
           function update_to_version() {
             version=$1

@@ -56,7 +56,7 @@ frappe.ui.ThemeSwitcher = class ThemeSwitcher {
 			this.themes = [
 				{
 					name: "light",
-					label: __("Frappe Light"),
+					label: __("Altrix Light"),
 					info: __("Light Theme"),
 				},
 				{

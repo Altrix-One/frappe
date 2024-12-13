@@ -615,7 +615,7 @@ function upload_file(file, i) {
 		};
 		xhr.open("POST", "/api/method/upload_file", true);
 		xhr.setRequestHeader("Accept", "application/json");
-		xhr.setRequestHeader("X-Frappe-CSRF-Token", frappe.csrf_token);
+		xhr.setRequestHeader("X-Altrix-CSRF-Token", frappe.csrf_token);
 
 		let form_data = new FormData();
 		if (file.file_obj) {

@@ -1,8 +1,8 @@
 from frappe.model.base_document import BaseDocument
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestBaseDocument(FrappeTestCase):
+class TestBaseDocument(AltrixTestCase):
 	def test_docstatus(self):
 		doc = BaseDocument({"docstatus": 0, "doctype": "ToDo"})
 		self.assertTrue(doc.docstatus.is_draft())

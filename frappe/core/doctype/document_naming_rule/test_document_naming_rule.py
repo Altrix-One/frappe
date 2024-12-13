@@ -1,10 +1,10 @@
 # Copyright (c) 2020, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestDocumentNamingRule(FrappeTestCase):
+class TestDocumentNamingRule(AltrixTestCase):
 	def test_naming_rule_by_series(self):
 		naming_rule = frappe.get_doc(
 			dict(doctype="Document Naming Rule", document_type="ToDo", prefix="test-todo-", prefix_digits=5)

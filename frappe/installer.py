@@ -54,7 +54,7 @@ def _new_site(
 	mariadb_user_host_login_scope=None,
 	db_socket=None,
 ):
-	"""Install a new Frappe site"""
+	"""Install a new Altrix site"""
 
 	from frappe.utils import scheduler
 
@@ -189,7 +189,7 @@ def find_org(org_repo: str) -> tuple[str, str]:
 	"""find the org a repo is in
 
 	find_org()
-	ref -> https://github.com/frappe/bench/blob/develop/bench/utils/__init__.py#L390
+	ref -> https://github.com/epiusegs/bench/blob/develop/bench/utils/__init__.py#L390
 
 	:param org_repo:
 	:type org_repo: str
@@ -217,7 +217,7 @@ def fetch_details_from_tag(_tag: str) -> tuple[str, str, str]:
 	"""parse org, repo, tag from string
 
 	fetch_details_from_tag()
-	ref -> https://github.com/frappe/bench/blob/develop/bench/utils/__init__.py#L403
+	ref -> https://github.com/epiusegs/bench/blob/develop/bench/utils/__init__.py#L403
 
 	:param _tag: input string
 	:type _tag: str
@@ -245,7 +245,7 @@ def parse_app_name(name: str) -> str:
 	"""parse repo name from name
 
 	__setup_details_from_git()
-	ref -> https://github.com/frappe/bench/blob/develop/bench/app.py#L114
+	ref -> https://github.com/epiusegs/bench/blob/develop/bench/app.py#L114
 
 
 	:param name: git tag
@@ -792,7 +792,7 @@ def is_downgrade(sql_file_path, verbose=False):
 	is_downgrade = backup_version > current_version
 
 	if verbose and is_downgrade:
-		print(f"Your site is currently on Frappe {current_version} and your backup is {backup_version}.")
+		print(f"Your site is currently on Altrix {current_version} and your backup is {backup_version}.")
 
 	return is_downgrade
 
@@ -800,10 +800,10 @@ def is_downgrade(sql_file_path, verbose=False):
 def get_old_backup_version(sql_file_path: str) -> Version | None:
 	"""Return the frappe version used to create the specified database dump.
 
-	This methods supports older versions of Frappe wich used a different format.
+	This methods supports older versions of Altrix wich used a different format.
 	"""
 	header = get_db_dump_header(sql_file_path).split("\n")
-	if match := re.search(r"Frappe (\d+\.\d+\.\d+)", header[0]):
+	if match := re.search(r"Altrix (\d+\.\d+\.\d+)", header[0]):
 		return Version(match[1])
 	return None
 

@@ -7,12 +7,12 @@ from functools import partial
 import frappe
 from frappe.app import make_form_dict
 from frappe.desk.search import get_names_for_mentions, search_link, search_widget
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import set_request
 from frappe.website.serve import get_response
 
 
-class TestSearch(FrappeTestCase):
+class TestSearch(AltrixTestCase):
 	def setUp(self):
 		if self._testMethodName == "test_link_field_order":
 			setup_test_link_field_order(self)
@@ -251,7 +251,7 @@ def teardown_test_link_field_order(TestCase):
 	TestCase.tree_doc.delete()
 
 
-class TestWebsiteSearch(FrappeTestCase):
+class TestWebsiteSearch(AltrixTestCase):
 	def get(self, path, user="Guest"):
 		frappe.set_user(user)
 		set_request(method="GET", path=path)

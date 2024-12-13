@@ -365,7 +365,7 @@ def sync_events_from_google_calendar(g_calendar, method=None):
 
 def insert_event_to_calendar(account, event, recurrence=None):
 	"""
-	Inserts event in Frappe Calendar during Sync
+	Inserts event in Altrix Calendar during Sync
 	"""
 	calendar_event = {
 		"doctype": "Event",
@@ -386,7 +386,7 @@ def insert_event_to_calendar(account, event, recurrence=None):
 
 def update_event_in_calendar(account, event, recurrence=None):
 	"""
-	Updates Event in Frappe Calendar if any existing Google Calendar Event is updated
+	Updates Event in Altrix Calendar if any existing Google Calendar Event is updated
 	"""
 	calendar_event = frappe.get_doc("Event", {"google_calendar_event_id": event.get("id")})
 	calendar_event.subject = event.get("summary")
@@ -462,7 +462,7 @@ def insert_event_in_google_calendar(doc, method=None):
 
 def update_event_in_google_calendar(doc, method=None):
 	"""
-	Updates Events in Google Calendar if any existing event is modified in Frappe Calendar
+	Updates Events in Google Calendar if any existing event is modified in Altrix Calendar
 	"""
 	# Workaround to avoid triggering updation when Event is being inserted since
 	# creation and modified are same when inserting doc
@@ -546,7 +546,7 @@ def update_event_in_google_calendar(doc, method=None):
 
 def delete_event_from_google_calendar(doc, method=None):
 	"""
-	Delete Events from Google Calendar if Frappe Event is deleted.
+	Delete Events from Google Calendar if Altrix Event is deleted.
 	"""
 
 	if not frappe.db.exists("Google Calendar", {"name": doc.google_calendar}):

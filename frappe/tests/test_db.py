@@ -15,12 +15,12 @@ from frappe.database.utils import FallBackDateTimeStr
 from frappe.query_builder import Field
 from frappe.query_builder.functions import Concat_ws
 from frappe.tests.test_query_builder import db_type_is, run_only_if
-from frappe.tests.utils import FrappeTestCase, timeout
+from frappe.tests.utils import AltrixTestCase, timeout
 from frappe.utils import add_days, now, random_string, set_request
 from frappe.utils.testutils import clear_custom_fields
 
 
-class TestDB(FrappeTestCase):
+class TestDB(AltrixTestCase):
 	def test_datetime_format(self):
 		now_str = now()
 		self.assertEqual(frappe.db.format_datetime(None), FallBackDateTimeStr)
@@ -661,7 +661,7 @@ class TestDB(FrappeTestCase):
 
 
 @run_only_if(db_type_is.MARIADB)
-class TestDDLCommandsMaria(FrappeTestCase):
+class TestDDLCommandsMaria(AltrixTestCase):
 	test_table_name = "TestNotes"
 
 	def setUp(self) -> None:
@@ -723,7 +723,7 @@ class TestDDLCommandsMaria(FrappeTestCase):
 		self.assertEqual(len(indexs_in_table), 2)
 
 
-class TestDBSetValue(FrappeTestCase):
+class TestDBSetValue(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
@@ -869,7 +869,7 @@ class TestDBSetValue(FrappeTestCase):
 
 
 @run_only_if(db_type_is.POSTGRES)
-class TestDDLCommandsPost(FrappeTestCase):
+class TestDDLCommandsPost(AltrixTestCase):
 	test_table_name = "TestNotes"
 
 	def setUp(self) -> None:
@@ -978,7 +978,7 @@ class TestDDLCommandsPost(FrappeTestCase):
 
 
 @run_only_if(db_type_is.POSTGRES)
-class TestTransactionManagement(FrappeTestCase):
+class TestTransactionManagement(AltrixTestCase):
 	def test_create_proper_transactions(self):
 		def _get_transaction_id():
 			return frappe.db.sql("select txid_current()", pluck=True)
@@ -993,7 +993,7 @@ class TestTransactionManagement(FrappeTestCase):
 
 
 # Treat same DB as replica for tests, a separate connection will be opened
-class TestReplicaConnections(FrappeTestCase):
+class TestReplicaConnections(AltrixTestCase):
 	def test_switching_to_replica(self):
 		with patch.dict(frappe.local.conf, {"read_from_replica": 1, "replica_host": "127.0.0.1"}):
 
@@ -1023,7 +1023,7 @@ class TestReplicaConnections(FrappeTestCase):
 			self.assertEqual(write_connection, db_id())
 
 
-class TestConcurrency(FrappeTestCase):
+class TestConcurrency(AltrixTestCase):
 	@timeout(5, "There shouldn't be any lock wait")
 	def test_skip_locking(self):
 		with self.primary_connection():
@@ -1061,7 +1061,7 @@ class TestConcurrency(FrappeTestCase):
 			self.assertRaises(frappe.QueryTimeoutError, frappe.delete_doc, note.doctype, note.name)
 
 
-class TestSqlIterator(FrappeTestCase):
+class TestSqlIterator(AltrixTestCase):
 	def test_db_sql_iterator(self):
 		test_queries = [
 			"select * from `tabCountry` order by name",

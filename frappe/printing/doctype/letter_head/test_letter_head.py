@@ -1,10 +1,10 @@
 # Copyright (c) 2017, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestLetterHead(FrappeTestCase):
+class TestLetterHead(AltrixTestCase):
 	def test_auto_image(self):
 		letter_head = frappe.get_doc(
 			dict(doctype="Letter Head", letter_head_name="Test", source="Image", image="/public/test.png")

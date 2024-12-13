@@ -5,7 +5,7 @@ import requests
 
 import frappe
 from frappe.installer import update_site_config
-from frappe.tests.test_api import FrappeAPITestCase, suppress_stdout
+from frappe.tests.test_api import AltrixAPITestCase, suppress_stdout
 
 authorization_token = None
 
@@ -17,7 +17,7 @@ resource_key = {
 }
 
 
-class TestResourceAPIV2(FrappeAPITestCase):
+class TestResourceAPIV2(AltrixAPITestCase):
 	version = "v2"
 	DOCTYPE = "ToDo"
 	GENERATED_DOCUMENTS: typing.ClassVar[list] = []
@@ -120,7 +120,7 @@ class TestResourceAPIV2(FrappeAPITestCase):
 		self.assertFalse(response.json["errors"][0].get("exception"))
 
 
-class TestMethodAPIV2(FrappeAPITestCase):
+class TestMethodAPIV2(AltrixAPITestCase):
 	version = "v2"
 
 	def setUp(self) -> None:
@@ -238,7 +238,7 @@ class TestMethodAPIV2(FrappeAPITestCase):
 		self.assertEqual(response["data"]["content"], comment_txt)
 
 
-class TestDocTypeAPIV2(FrappeAPITestCase):
+class TestDocTypeAPIV2(AltrixAPITestCase):
 	version = "v2"
 
 	def setUp(self) -> None:
@@ -255,7 +255,7 @@ class TestDocTypeAPIV2(FrappeAPITestCase):
 		self.assertIsInstance(response.json["data"], int)
 
 
-class TestReadOnlyMode(FrappeAPITestCase):
+class TestReadOnlyMode(AltrixAPITestCase):
 	"""During migration if read only mode can be enabled.
 	Test if reads work well and writes are blocked"""
 

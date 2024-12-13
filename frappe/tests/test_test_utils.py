@@ -1,11 +1,11 @@
 from datetime import timedelta
 
 import frappe
-from frappe.tests.utils import FrappeTestCase, change_settings
+from frappe.tests.utils import AltrixTestCase, change_settings
 from frappe.utils.data import now_datetime
 
 
-class TestTestUtils(FrappeTestCase):
+class TestTestUtils(AltrixTestCase):
 	SHOW_TRANSACTION_COMMIT_WARNINGS = True
 
 	def test_document_assertions(self):

@@ -272,7 +272,7 @@ frappe.views.ListSidebar = class ListSidebar {
 
 			const message = __("Get more insights with");
 			const link = "https://Altrix.com/s/insights";
-			const cta = __("Frappe Insights");
+			const cta = __("Altrix Insights");
 
 			this.insights_banner = $(`
 				<div style="position: relative;">

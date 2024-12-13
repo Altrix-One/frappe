@@ -9,12 +9,12 @@ frappe.ui.misc.about = function () {
 					<p>${__("Open Source Applications for the Web")}</p>
 					<p><i class='fa fa-globe fa-fw'></i>
 						${__("Website")}:
-						<a href='https://frappeframework.com' target='_blank'>https://frappeframework.com</a></p>
+						<a href='https://altrixone.com' target='_blank'>https://altrixone.com</a></p>
 					<p><i class='fa fa-github fa-fw'></i>
 						${__("Source")}:
-						<a href='https://github.com/frappe' target='_blank'>https://github.com/frappe</a></p>
+						<a href='https://github.com/epiusegs' target='_blank'>https://github.com/epiusegs</a></p>
 					<p><i class='fa fa-graduation-cap fa-fw'></i>
-						Frappe School: <a href='https://frappe.school' target='_blank'>https://frappe.school</a></p>
+						Altrix School: <a href='https://frappe.school' target='_blank'>https://frappe.school</a></p>
 					<p><i class='fa fa-linkedin fa-fw'></i>
 						Linkedin: <a href='https://linkedin.com/company/frappe-tech' target='_blank'>https://linkedin.com/company/frappe-tech</a></p>
 					<p><i class='fa fa-twitter fa-fw'></i>

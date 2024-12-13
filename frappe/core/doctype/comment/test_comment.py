@@ -5,11 +5,11 @@ import json
 import frappe
 from frappe.templates.includes.comments.comments import add_comment
 from frappe.tests.test_model_utils import set_user
-from frappe.tests.utils import FrappeTestCase, change_settings
+from frappe.tests.utils import AltrixTestCase, change_settings
 from frappe.website.doctype.blog_post.test_blog_post import make_test_blog
 
 
-class TestComment(FrappeTestCase):
+class TestComment(AltrixTestCase):
 	def test_comment_creation(self):
 		test_doc = frappe.get_doc(dict(doctype="ToDo", description="test"))
 		test_doc.insert()

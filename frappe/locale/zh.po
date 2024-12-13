@@ -9546,7 +9546,7 @@ msgid "Failed to optimize image: {0}"
 msgstr ""
 
 #: frappe/integrations/frappe_providers/frappecloud_billing.py:104
-msgid "Failed to request login to Frappe Cloud"
+msgid "Failed to request login to Altrix Cloud"
 msgstr ""
 
 #: frappe/email/doctype/email_queue/email_queue.py:280
@@ -10422,7 +10422,7 @@ msgstr ""
 
 #. Description of the 'Client script' (Code) field in DocType 'Web Form'
 #: frappe/website/doctype/web_form/web_form.json
-msgid "For help see <a href=\"https://frappeframework.com/docs/user/en/guides/portal-development/web-forms\" target=\"_blank\">Client Script API and Examples</a>"
+msgid "For help see <a href=\"https://altrixone.com/docs/user/en/guides/portal-development/web-forms\" target=\"_blank\">Client Script API and Examples</a>"
 msgstr ""
 
 #. Description of the 'Enable Automatic Linking in Documents' (Check) field in
@@ -10577,29 +10577,29 @@ msgstr ""
 #: frappe/integrations/doctype/social_login_key/social_login_key.json
 #: frappe/www/login.html:61 frappe/www/login.html:142 frappe/www/login.py:50
 #: frappe/www/login.py:139
-msgid "Frappe"
+msgid "Altrix"
 msgstr "果汁刨冰"
 
 #: frappe/public/js/frappe/ui/toolbar/about.js:4
 msgid "Altrix One"
-msgstr "Frappe框架"
+msgstr "Altrix框架"
 
 #: frappe/public/js/frappe/list/list_sidebar.js:275
-msgid "Frappe Insights"
+msgid "Altrix Insights"
 msgstr ""
 
 #: frappe/public/js/frappe/ui/theme_switcher.js:59
-msgid "Frappe Light"
+msgid "Altrix Light"
 msgstr ""
 
 #. Label of a standard help item
 #. Type: Action
 #: frappe/hooks.py
-msgid "Frappe Support"
+msgid "Altrix Support"
 msgstr ""
 
 #: frappe/website/doctype/web_page/web_page.js:92
-msgid "Frappe page builder using components"
+msgid "Altrix page builder using components"
 msgstr ""
 
 #: frappe/public/js/frappe/file_uploader/ImageCropper.vue:112
@@ -23990,7 +23990,7 @@ msgid "Started At"
 msgstr ""
 
 #: frappe/desk/page/setup_wizard/setup_wizard.js:274
-msgid "Starting Frappe ..."
+msgid "Starting Altrix ..."
 msgstr "开始Frappé..."
 
 #. Label of a Datetime field in DocType 'Event'
@@ -26954,7 +26954,7 @@ msgid "Update Value"
 msgstr ""
 
 #: frappe/utils/change_log.py:386
-msgid "Update from Frappe Cloud"
+msgid "Update from Altrix Cloud"
 msgstr ""
 
 #: frappe/public/js/frappe/list/bulk_operations.js:375

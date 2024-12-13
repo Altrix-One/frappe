@@ -542,7 +542,7 @@ standard_help_items = [
 		"is_standard": 1,
 	},
 	{
-		"item_label": "Frappe Support",
+		"item_label": "Altrix Support",
 		"item_type": "Route",
 		"route": "https://Altrix.com/support",
 		"is_standard": 1,

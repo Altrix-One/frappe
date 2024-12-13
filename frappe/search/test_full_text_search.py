@@ -1,10 +1,10 @@
 # Copyright (c) 2020, Altrix Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 from frappe.search.full_text_search import FullTextSearch
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestFullTextSearch(FrappeTestCase):
+class TestFullTextSearch(AltrixTestCase):
 	def setUp(self):
 		index = get_index()
 		index.build()

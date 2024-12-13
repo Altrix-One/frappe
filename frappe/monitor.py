@@ -74,7 +74,7 @@ class Monitor:
 			}
 		)
 
-		if request_id := frappe.request.headers.get("X-Frappe-Request-Id"):
+		if request_id := frappe.request.headers.get("X-Altrix-Request-Id"):
 			self.data.uuid = request_id
 
 	def collect_job_meta(self, method, kwargs):

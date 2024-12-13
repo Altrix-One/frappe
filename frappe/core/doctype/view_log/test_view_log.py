@@ -1,10 +1,10 @@
 # Copyright (c) 2018, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestViewLog(FrappeTestCase):
+class TestViewLog(AltrixTestCase):
 	def tearDown(self):
 		frappe.set_user("Administrator")
 

@@ -58,7 +58,7 @@ class SocialLoginKey(Document):
 		social_login_provider: DF.Literal[
 			"Custom",
 			"Facebook",
-			"Frappe",
+			"Altrix",
 			"GitHub",
 			"Google",
 			"Office 365",
@@ -92,7 +92,7 @@ class SocialLoginKey(Document):
 	def set_icon(self):
 		icon_map = {
 			"Google": "google.svg",
-			"Frappe": "frappe.svg",
+			"Altrix": "frappe.svg",
 			"Facebook": "facebook.svg",
 			"Office 365": "office_365.svg",
 			"GitHub": "github.svg",
@@ -173,8 +173,8 @@ class SocialLoginKey(Document):
 			),
 		}
 
-		providers["Frappe"] = {
-			"provider_name": "Frappe",
+		providers["Altrix"] = {
+			"provider_name": "Altrix",
 			"enable_social_login": 1,
 			"custom_base_url": 1,
 			"icon": "/assets/frappe/images/frappe-favicon.svg",

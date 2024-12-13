@@ -4,13 +4,13 @@ import frappe
 from frappe.core.page.permission_manager.permission_manager import add, reset, update
 from frappe.custom.doctype.property_setter.property_setter import make_property_setter
 from frappe.desk.form.load import get_docinfo, getdoc, getdoctype
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils.file_manager import save_file
 
 test_dependencies = ["Blog Category", "Blogger"]
 
 
-class TestFormLoad(FrappeTestCase):
+class TestFormLoad(AltrixTestCase):
 	def test_load(self):
 		getdoctype("DocType")
 		meta = next(filter(lambda d: d.name == "DocType", frappe.response.docs))

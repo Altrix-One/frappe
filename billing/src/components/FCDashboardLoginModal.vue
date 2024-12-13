@@ -2,7 +2,7 @@
 	<Dialog
 		v-model="show"
 		:options="{
-			title: loginLink ? 'Login successful!' : 'Login to Frappe Cloud Dashboard',
+			title: loginLink ? 'Login successful!' : 'Login to Altrix Cloud Dashboard',
 		}"
 	>
 		<template #body-content>
@@ -21,7 +21,7 @@
 					<ErrorMessage v-if="verifyAndLogin.error" :message="verifyAndLogin.error" />
 				</div>
 				<div v-else-if="loginLink">
-					<p>You will be redirected to the Frappe Cloud Dashboard</p>
+					<p>You will be redirected to the Altrix Cloud Dashboard</p>
 					<p>
 						If you haven't been redirected,
 						<a class="underline" :href="loginLink" target="_blank">

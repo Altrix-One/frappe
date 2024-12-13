@@ -3,10 +3,10 @@
 import json
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestSeen(FrappeTestCase):
+class TestSeen(AltrixTestCase):
 	def tearDown(self):
 		frappe.set_user("Administrator")
 

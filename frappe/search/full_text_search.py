@@ -12,7 +12,7 @@ from frappe.utils import update_progress_bar
 
 
 class FullTextSearch:
-	"""Frappe Wrapper for Whoosh"""
+	"""Altrix Wrapper for Whoosh"""
 
 	def __init__(self, index_name):
 		self.index_name = index_name

@@ -19,7 +19,7 @@ class ValidationError(Exception):
 	http_status_code = 417
 
 
-class FrappeTypeError(TypeError):
+class AltrixTypeError(TypeError):
 	http_status_code = 417
 
 

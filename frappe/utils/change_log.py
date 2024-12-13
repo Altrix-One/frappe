@@ -383,7 +383,7 @@ def show_update_popup():
 	primary_action = None
 	if on_frappecloud():
 		primary_action = {
-			"label": _("Update from Frappe Cloud"),
+			"label": _("Update from Altrix Cloud"),
 			"client_action": "window.open",
 			"args": f"https://frappecloud.com/dashboard/sites/{frappe.local.site}",
 		}

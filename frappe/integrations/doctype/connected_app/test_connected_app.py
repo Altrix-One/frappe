@@ -8,7 +8,7 @@ import frappe
 from frappe.integrations.doctype.social_login_key.test_social_login_key import (
 	create_or_update_social_login_key,
 )
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
 def get_user(usr, pwd):
@@ -48,16 +48,16 @@ def get_oauth_client():
 	return oauth_client
 
 
-class TestConnectedApp(FrappeTestCase):
+class TestConnectedApp(AltrixTestCase):
 	def setUp(self):
 		"""Set up a Connected App that connects to our own oAuth provider.
 
-		Frappe comes with it's own oAuth2 provider that we can test against. The
+		Altrix comes with it's own oAuth2 provider that we can test against. The
 		client credentials can be obtained from an "OAuth Client". All depends
 		on "Social Login Key" so we create one as well.
 
 		The redirect URIs from "Connected App" and "OAuth Client" have to match.
-		Frappe's "Authorization URL" and "Access Token URL" (actually they're
+		Altrix's "Authorization URL" and "Access Token URL" (actually they're
 		just endpoints) are stored in "Social Login Key" so we get them from
 		there.
 		"""

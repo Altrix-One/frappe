@@ -144,7 +144,7 @@ def validate_name(name, throw=False):
 	valid names may have unicode and ascii characters, dash, quotes, numbers
 	anything else is considered invalid
 
-	Note: "Name" here is name of a person, not the primary key in Frappe doctypes.
+	Note: "Name" here is name of a person, not the primary key in Altrix doctypes.
 	"""
 	if not name:
 		return False
@@ -572,7 +572,7 @@ def touch_file(path):
 
 
 def get_test_client(use_cookies=True) -> Client:
-	"""Returns an test instance of the Frappe WSGI"""
+	"""Returns an test instance of the Altrix WSGI"""
 	from frappe.app import application
 
 	return Client(application, use_cookies=use_cookies)

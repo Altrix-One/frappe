@@ -8,7 +8,7 @@
 				<FCLogo class="size-8 flex-shrink-0 rounded" />
 				<div class="flex flex-1 flex-col text-left duration-300 ease-in-out ml-2 w-auto">
 					<div class="text-base font-medium leading-none text-gray-900">
-						{{ 'Frappe Cloud' }}
+						{{ 'Altrix Cloud' }}
 					</div>
 					<div class="mt-1 text-sm leading-none text-gray-700">
 						{{ user?.fullName }}
@@ -54,7 +54,7 @@ let dropdownOptions = ref([
 		items: [
 			{
 				icon: 'monitor',
-				label: computed(() => 'Frappe Cloud Dashboard'),
+				label: computed(() => 'Altrix Cloud Dashboard'),
 				onClick: () => (showFCDashboardLoginModal.value = true),
 			},
 			{

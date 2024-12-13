@@ -20,11 +20,11 @@ from frappe.model.naming import (
 )
 from frappe.query_builder.utils import db_type_is
 from frappe.tests.test_query_builder import run_only_if
-from frappe.tests.utils import FrappeTestCase, patch_hooks
+from frappe.tests.utils import AltrixTestCase, patch_hooks
 from frappe.utils import now_datetime, nowdate, nowtime
 
 
-class TestNaming(FrappeTestCase):
+class TestNaming(AltrixTestCase):
 	def setUp(self):
 		frappe.db.delete("Note")
 

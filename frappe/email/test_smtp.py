@@ -4,10 +4,10 @@
 import frappe
 from frappe.email.doctype.email_account.email_account import EmailAccount
 from frappe.email.smtp import SMTPServer
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestSMTP(FrappeTestCase):
+class TestSMTP(AltrixTestCase):
 	def test_smtp_ssl_session(self):
 		for port in [None, 0, 465, "465"]:
 			make_server(port, 1, 0)

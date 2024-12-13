@@ -1,10 +1,10 @@
 # Copyright (c) 2020, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestSystemConsole(FrappeTestCase):
+class TestSystemConsole(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls) -> None:
 		cls.enable_safe_exec()

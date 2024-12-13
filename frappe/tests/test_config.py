@@ -2,10 +2,10 @@
 # License: MIT. See LICENSE
 import frappe
 from frappe.config import get_modules_from_all_apps_for_user
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestConfig(FrappeTestCase):
+class TestConfig(AltrixTestCase):
 	def test_get_modules(self):
 		frappe_modules = frappe.get_all("Module Def", filters={"app_name": "frappe"}, pluck="name")
 		all_modules_data = get_modules_from_all_apps_for_user()

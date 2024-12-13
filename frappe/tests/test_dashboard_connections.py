@@ -8,10 +8,10 @@ import frappe.utils
 from frappe.core.doctype.doctype.test_doctype import new_doctype
 from frappe.custom.doctype.customize_form.test_customize_form import TestCustomizeForm
 from frappe.desk.notifications import get_open_count
-from frappe.tests.utils import FrappeTestCase, patch_hooks
+from frappe.tests.utils import AltrixTestCase, patch_hooks
 
 
-class TestDashboardConnections(FrappeTestCase):
+class TestDashboardConnections(AltrixTestCase):
 	@patch.dict(frappe.conf, {"developer_mode": 1})
 	def setUp(self):
 		delete_test_data()

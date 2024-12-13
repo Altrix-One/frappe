@@ -7,10 +7,10 @@ import requests
 
 import frappe
 from frappe.auth import LoginAttemptTracker
-from frappe.frappeclient import AuthError, FrappeClient
+from frappe.frappeclient import AuthError, AltrixClient
 from frappe.sessions import Session, get_expired_sessions, get_expiry_in_seconds
-from frappe.tests.test_api import FrappeAPITestCase
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.test_api import AltrixAPITestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import get_datetime, get_site_url, now
 from frappe.utils.data import add_to_date
 from frappe.www.login import _generate_temporary_login_link
@@ -27,7 +27,7 @@ def add_user(email, password, username=None, mobile_no=None):
 	frappe.db.commit()
 
 
-class TestAuth(FrappeTestCase):
+class TestAuth(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
@@ -62,12 +62,12 @@ class TestAuth(FrappeTestCase):
 		self.set_system_settings("allow_login_using_user_name", 0)
 
 		# Login by both email and mobile should work
-		FrappeClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
-		FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
 
 		# login by username should fail
 		with self.assertRaises(AuthError):
-			FrappeClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
+			AltrixClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
 
 	def test_allow_login_using_only_email(self):
 		self.set_system_settings("allow_login_using_mobile_number", 0)
@@ -75,14 +75,14 @@ class TestAuth(FrappeTestCase):
 
 		# Login by mobile number should fail
 		with self.assertRaises(AuthError):
-			FrappeClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
+			AltrixClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
 
 		# login by username should fail
 		with self.assertRaises(AuthError):
-			FrappeClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
+			AltrixClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
 
 		# Login by email should work
-		FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
 
 	def test_allow_login_using_username(self):
 		self.set_system_settings("allow_login_using_mobile_number", 0)
@@ -90,34 +90,34 @@ class TestAuth(FrappeTestCase):
 
 		# Mobile login should fail
 		with self.assertRaises(AuthError):
-			FrappeClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
+			AltrixClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
 
 		# Both email and username logins should work
-		FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
-		FrappeClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
 
 	def test_allow_login_using_username_and_mobile(self):
 		self.set_system_settings("allow_login_using_mobile_number", 1)
 		self.set_system_settings("allow_login_using_user_name", 1)
 
 		# Both email and username and mobile logins should work
-		FrappeClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
-		FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
-		FrappeClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_mobile, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		AltrixClient(self.HOST_NAME, self.test_user_name, self.test_user_password)
 
 	def test_deny_multiple_login(self):
 		self.set_system_settings("deny_multiple_sessions", 1)
 		self.addCleanup(self.set_system_settings, "deny_multiple_sessions", 0)
 
-		first_login = FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		first_login = AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
 		first_login.get_list("ToDo")
 
-		second_login = FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		second_login = AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
 		second_login.get_list("ToDo")
 		with self.assertRaises(Exception):
 			first_login.get_list("ToDo")
 
-		third_login = FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		third_login = AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
 		with self.assertRaises(Exception):
 			first_login.get_list("ToDo")
 		with self.assertRaises(Exception):
@@ -125,12 +125,12 @@ class TestAuth(FrappeTestCase):
 		third_login.get_list("ToDo")
 
 	def test_disable_user_pass_login(self):
-		FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password).get_list("ToDo")
+		AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password).get_list("ToDo")
 		self.set_system_settings("disable_user_pass_login", 1)
 		self.addCleanup(self.set_system_settings, "disable_user_pass_login", 0)
 
 		with self.assertRaises(Exception):
-			FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password).get_list("ToDo")
+			AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password).get_list("ToDo")
 
 	def test_login_with_email_link(self):
 		user = self.test_user_email
@@ -160,14 +160,14 @@ class TestAuth(FrappeTestCase):
 	def test_correct_cookie_expiry_set(self):
 		import pytz
 
-		client = FrappeClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
+		client = AltrixClient(self.HOST_NAME, self.test_user_email, self.test_user_password)
 
 		expiry_time = next(x for x in client.session.cookies if x.name == "sid").expires
 		current_time = datetime.datetime.now(tz=pytz.UTC).timestamp()
 		self.assertAlmostEqual(get_expiry_in_seconds(), expiry_time - current_time, delta=60 * 60)
 
 
-class TestLoginAttemptTracker(FrappeTestCase):
+class TestLoginAttemptTracker(AltrixTestCase):
 	def test_account_lock(self):
 		"""Make sure that account locks after `n consecutive failures"""
 		tracker = LoginAttemptTracker("tester", max_consecutive_login_attempts=3, lock_interval=60)
@@ -206,7 +206,7 @@ class TestLoginAttemptTracker(FrappeTestCase):
 		self.assertTrue(tracker.is_user_allowed())
 
 
-class TestSessionExpirty(FrappeAPITestCase):
+class TestSessionExpirty(AltrixAPITestCase):
 	def test_session_expires(self):
 		sid = self.sid  # triggers login for test case login
 		s: Session = frappe.local.session_obj

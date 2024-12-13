@@ -5,11 +5,11 @@ import frappe
 from frappe.custom.doctype.property_setter.property_setter import make_property_setter
 from frappe.desk.page.setup_wizard.install_fixtures import update_global_search_doctypes
 from frappe.test_runner import make_test_objects
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import global_search, now_datetime
 
 
-class TestGlobalSearch(FrappeTestCase):
+class TestGlobalSearch(AltrixTestCase):
 	def setUp(self):
 		update_global_search_doctypes()
 		global_search.setup_global_search_table()

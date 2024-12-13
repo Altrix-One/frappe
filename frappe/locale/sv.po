@@ -9737,8 +9737,8 @@ msgid "Failed to optimize image: {0}"
 msgstr "Misslyckades att optimera bild: {0}"
 
 #: frappe/integrations/frappe_providers/frappecloud_billing.py:104
-msgid "Failed to request login to Frappe Cloud"
-msgstr "Misslyckades med att begära inloggning till Frappe Cloud"
+msgid "Failed to request login to Altrix Cloud"
+msgstr "Misslyckades med att begära inloggning till Altrix Cloud"
 
 #: frappe/email/doctype/email_queue/email_queue.py:280
 msgid "Failed to send email with subject:"
@@ -10613,8 +10613,8 @@ msgstr "Till exempel: {} Öppna"
 
 #. Description of the 'Client script' (Code) field in DocType 'Web Form'
 #: frappe/website/doctype/web_form/web_form.json
-msgid "For help see <a href=\"https://frappeframework.com/docs/user/en/guides/portal-development/web-forms\" target=\"_blank\">Client Script API and Examples</a>"
-msgstr "För mer information <a href=\"https://frappeframework.com/docs/user/en/guides/portal-development/web-forms\" target=\"_blank\">Klient Skript API och exempel</a>"
+msgid "For help see <a href=\"https://altrixone.com/docs/user/en/guides/portal-development/web-forms\" target=\"_blank\">Client Script API and Examples</a>"
+msgstr "För mer information <a href=\"https://altrixone.com/docs/user/en/guides/portal-development/web-forms\" target=\"_blank\">Klient Skript API och exempel</a>"
 
 #. Description of the 'Enable Automatic Linking in Documents' (Check) field in
 #. DocType 'Email Account'
@@ -10768,30 +10768,30 @@ msgstr "Bråkdel Enheter"
 #: frappe/integrations/doctype/social_login_key/social_login_key.json
 #: frappe/www/login.html:61 frappe/www/login.html:142 frappe/www/login.py:50
 #: frappe/www/login.py:139
-msgid "Frappe"
-msgstr "Frappe"
+msgid "Altrix"
+msgstr "Altrix"
 
 #: frappe/public/js/frappe/ui/toolbar/about.js:4
 msgid "Altrix One"
 msgstr "Altrix One"
 
 #: frappe/public/js/frappe/list/list_sidebar.js:275
-msgid "Frappe Insights"
-msgstr "Frappe Insights"
+msgid "Altrix Insights"
+msgstr "Altrix Insights"
 
 #: frappe/public/js/frappe/ui/theme_switcher.js:59
-msgid "Frappe Light"
-msgstr "Frappe Light"
+msgid "Altrix Light"
+msgstr "Altrix Light"
 
 #. Label of a standard help item
 #. Type: Action
 #: frappe/hooks.py
-msgid "Frappe Support"
-msgstr "Frappe Support"
+msgid "Altrix Support"
+msgstr "Altrix Support"
 
 #: frappe/website/doctype/web_page/web_page.js:92
-msgid "Frappe page builder using components"
-msgstr "Frappe Redigerare som använder komponenter"
+msgid "Altrix page builder using components"
+msgstr "Altrix Redigerare som använder komponenter"
 
 #: frappe/public/js/frappe/file_uploader/ImageCropper.vue:112
 msgctxt "Image Cropper"
@@ -24209,8 +24209,8 @@ msgid "Started At"
 msgstr "Startade"
 
 #: frappe/desk/page/setup_wizard/setup_wizard.js:274
-msgid "Starting Frappe ..."
-msgstr "Startar Frappe..."
+msgid "Starting Altrix ..."
+msgstr "Startar Altrix..."
 
 #. Label of a Datetime field in DocType 'Event'
 #: frappe/desk/doctype/event/event.json
@@ -27187,8 +27187,8 @@ msgid "Update Value"
 msgstr "Uppdatera Värde"
 
 #: frappe/utils/change_log.py:386
-msgid "Update from Frappe Cloud"
-msgstr "Uppdatera från Frappe Cloud"
+msgid "Update from Altrix Cloud"
+msgstr "Uppdatera från Altrix Cloud"
 
 #: frappe/public/js/frappe/list/bulk_operations.js:375
 msgid "Update {0} records"

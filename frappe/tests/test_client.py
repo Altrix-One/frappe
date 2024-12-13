@@ -3,11 +3,11 @@
 from unittest.mock import patch
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import get_site_url
 
 
-class TestClient(FrappeTestCase):
+class TestClient(AltrixTestCase):
 	def test_set_value(self):
 		todo = frappe.get_doc(dict(doctype="ToDo", description="test")).insert()
 		frappe.set_value("ToDo", todo.name, "description", "test 1")

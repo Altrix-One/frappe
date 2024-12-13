@@ -3,11 +3,11 @@
 import frappe
 from frappe.cache_manager import clear_controller_cache
 from frappe.desk.doctype.todo.todo import ToDo
-from frappe.tests.test_api import FrappeAPITestCase
-from frappe.tests.utils import FrappeTestCase, patch_hooks
+from frappe.tests.test_api import AltrixAPITestCase
+from frappe.tests.utils import AltrixTestCase, patch_hooks
 
 
-class TestHooks(FrappeTestCase):
+class TestHooks(AltrixTestCase):
 	def test_hooks(self):
 		hooks = frappe.get_hooks()
 		self.assertTrue(isinstance(hooks.get("app_name"), list))
@@ -112,7 +112,7 @@ class TestHooks(FrappeTestCase):
 		event.delete()
 
 
-class TestAPIHooks(FrappeAPITestCase):
+class TestAPIHooks(AltrixAPITestCase):
 	def test_auth_hook(self):
 		with patch_hooks({"auth_hooks": ["frappe.tests.test_hooks.custom_auth"]}):
 			site_url = frappe.utils.get_site_url(frappe.local.site)

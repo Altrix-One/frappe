@@ -23,13 +23,13 @@ from frappe.permissions import (
 	update_permission_property,
 )
 from frappe.test_runner import make_test_records_for_doctype
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils.data import now_datetime
 
 test_dependencies = ["Blogger", "Blog Post", "User", "Contact", "Salutation"]
 
 
-class TestPermissions(FrappeTestCase):
+class TestPermissions(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

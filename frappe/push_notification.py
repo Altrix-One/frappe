@@ -5,7 +5,7 @@ import frappe
 from frappe import sbool
 from frappe.utils.response import Response
 
-from .frappeclient import FrappeClient
+from .frappeclient import AltrixClient
 
 
 class PushNotification:
@@ -240,9 +240,9 @@ class PushNotification:
 		relay_server_endpoint = frappe.conf.get("push_relay_server_url")
 		if use_authentication:
 			api_key, api_secret = self._get_credential()
-			client = FrappeClient(relay_server_endpoint, api_key=api_key, api_secret=api_secret)
+			client = AltrixClient(relay_server_endpoint, api_key=api_key, api_secret=api_secret)
 		else:
-			client = FrappeClient(relay_server_endpoint)
+			client = AltrixClient(relay_server_endpoint)
 		params["project_name"] = self.project_name
 		params["site_name"] = self._site_name
 		return client.post_api(method, params)

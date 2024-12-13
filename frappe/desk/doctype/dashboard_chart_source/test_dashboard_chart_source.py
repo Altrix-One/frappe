@@ -1,7 +1,7 @@
 # Copyright (c) 2019, Altrix Technologies and Contributors
 # License: MIT. See LICENSE
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestDashboardChartSource(FrappeTestCase):
+class TestDashboardChartSource(AltrixTestCase):
 	pass

@@ -44,7 +44,7 @@ function read(file) {
 }
 
 /**
- * @description Frappe's Capture object.
+ * @description Altrix's Capture object.
  *
  * @example
  * const capture = frappe.ui.Capture()

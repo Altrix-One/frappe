@@ -130,7 +130,7 @@ class SiteMigration:
 		* Sync fixtures & custom scripts
 		* Sync in-Desk Module Dashboards
 		* Sync customizations: Custom Fields, Property Setters, Custom Permissions
-		* Sync Frappe's internal language master
+		* Sync Altrix's internal language master
 		* Flush deferred inserts made during maintenance mode.
 		* Sync Portal Menu Items
 		* Sync Installed Applications Version History

@@ -16,7 +16,7 @@ function add_github_star_cta(listview) {
 		}
 
 		const message = __("Loving Altrix One?");
-		const link = "https://github.com/frappe/frappe";
+		const link = "https://github.com/epiusegs/frappe";
 		const cta = __("Star us on GitHub");
 
 		listview.github_star_banner = $(`

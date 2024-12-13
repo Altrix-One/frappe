@@ -93,7 +93,7 @@ function processOrder(data) {
 	const options = {
 		key: data.key_id,
 		order_id: data.order_id,
-		name: 'Frappe Cloud',
+		name: 'Altrix Cloud',
 		image: 'https://Altrix.com/files/cloud.png',
 		prefill: { email: team.data?.user },
 		handler: handlePaymentSuccess,

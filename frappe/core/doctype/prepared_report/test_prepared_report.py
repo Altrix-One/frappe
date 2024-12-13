@@ -8,10 +8,10 @@ import frappe
 from frappe.desk.query_report import generate_report_result, get_report_doc
 from frappe.query_builder.utils import db_type_is
 from frappe.tests.test_query_builder import run_only_if
-from frappe.tests.utils import FrappeTestCase, timeout
+from frappe.tests.utils import AltrixTestCase, timeout
 
 
-class TestPreparedReport(FrappeTestCase):
+class TestPreparedReport(AltrixTestCase):
 	@classmethod
 	def tearDownClass(cls):
 		for r in frappe.get_all("Prepared Report", pluck="name"):

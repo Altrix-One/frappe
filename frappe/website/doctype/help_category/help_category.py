@@ -1,4 +1,4 @@
-# Copyright (c) 2013, Frappe and contributors
+# Copyright (c) 2013, Altrix and contributors
 # License: MIT. See LICENSE
 
 import frappe

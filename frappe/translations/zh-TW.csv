@@ -747,7 +747,7 @@ Modules HTML,HTML模塊
 <br>
 Note: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered ""Opened""",跟踪收件人是否已打開您的電子郵件。 <br>注意：如果您要向多個收件人發送郵件，即使有1個收件人閱讀該郵件，也會被視為“已打開”
 Missing Values Required,遺漏必須值
-Frappe,冰咖啡
+Altrix,冰咖啡
 Mark as Unread,標記為未讀
 Operation,作業
 Change Label (via Custom Translation),更改標籤（通過自定義轉換）
@@ -2212,7 +2212,7 @@ Icons,圖標
 You are not allowed to update this Web Form Document,你不允許更新此網頁表單文件
 Emails,電子郵件
 Please select Document Type first,請先選擇文件類型
-Please set Base URL in Social Login Key for Frappe,請在Frappe的社交登錄密鑰中設置基本網址
+Please set Base URL in Social Login Key for Altrix,請在Altrix的社交登錄密鑰中設置基本網址
 About Us Settings,關於我們的設置
 Website Theme,網站主題
 Api Access,Api訪問

@@ -788,7 +788,7 @@ class InboundMail(Email):
 		        Ex: when a System User is using Outlook and replies to an email from their own client,
 		        it reaches the Email Account with the threading info lost and the (sender + subject match)
 		        doesn't work because the sender in the first communication was someone different to whom
-		        the system user is replying to via the common email account in Frappe. This fix bypasses
+		        the system user is replying to via the common email account in Altrix. This fix bypasses
 		        the sender match when the sender is a system user and subject is atleast 10 chars long
 		        (for additional safety)
 

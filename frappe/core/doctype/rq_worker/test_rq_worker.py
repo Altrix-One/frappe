@@ -3,10 +3,10 @@
 
 import frappe
 from frappe.core.doctype.rq_worker.rq_worker import RQWorker
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestRQWorker(FrappeTestCase):
+class TestRQWorker(AltrixTestCase):
 	def test_get_worker_list(self):
 		workers = RQWorker.get_list({})
 		self.assertGreaterEqual(len(workers), 1)

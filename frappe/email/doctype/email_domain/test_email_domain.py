@@ -2,12 +2,12 @@
 # License: MIT. See LICENSE
 import frappe
 from frappe.test_runner import make_test_objects
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 test_records = frappe.get_test_records("Email Domain")
 
 
-class TestDomain(FrappeTestCase):
+class TestDomain(AltrixTestCase):
 	def setUp(self):
 		make_test_objects("Email Domain", reset=True)
 

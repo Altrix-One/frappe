@@ -513,7 +513,7 @@ app_license = "{app_license}"
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
-# along with any modifications made in other Frappe apps
+# along with any modifications made in other Altrix apps
 # override_doctype_dashboards = {{
 # 	"Task": "{app_name}.task.get_dashboard_data"
 # }}
@@ -695,7 +695,7 @@ jobs:
 
 patches_template = """[pre_model_sync]
 # Patches added in this section will be executed before doctypes are migrated
-# Read docs to understand patches: https://frappeframework.com/docs/v14/user/en/database-migrations
+# Read docs to understand patches: https://altrixone.com/docs/v14/user/en/database-migrations
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated"""

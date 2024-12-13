@@ -105,7 +105,7 @@ context("Kanban Board", () => {
 			username: not_system_manager,
 		});
 		cy.remove_role(not_system_manager, "System Manager");
-		cy.call("frappe.tests.ui_test_helpers.create_todo", { description: "Frappe User ToDo" });
+		cy.call("frappe.tests.ui_test_helpers.create_todo", { description: "Altrix User ToDo" });
 		cy.call("frappe.tests.ui_test_helpers.create_admin_kanban");
 
 		cy.switch_to_user(not_system_manager);

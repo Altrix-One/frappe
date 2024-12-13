@@ -3,12 +3,12 @@
 from bs4 import BeautifulSoup
 
 import frappe
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import set_request
 from frappe.website.serve import get_response
 
 
-class TestWebTemplate(FrappeTestCase):
+class TestWebTemplate(AltrixTestCase):
 	def test_render_web_template_with_values(self):
 		doc = frappe.get_doc("Web Template", "Hero with Right Image")
 		values = {

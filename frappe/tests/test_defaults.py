@@ -5,10 +5,10 @@ from frappe.core.doctype.user_permission.test_user_permission import create_user
 from frappe.defaults import *
 from frappe.query_builder.utils import db_type_is
 from frappe.tests.test_query_builder import run_only_if
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestDefaults(FrappeTestCase):
+class TestDefaults(AltrixTestCase):
 	def test_global(self):
 		clear_user_default("key1")
 		set_global_default("key1", "value1")

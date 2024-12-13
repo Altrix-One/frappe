@@ -307,7 +307,7 @@ def get_translations_from_mo(lang, app):
 		return {}
 
 	translations = {}
-	lang = lang.replace("-", "_")  # Frappe uses dash, babel uses underscore.
+	lang = lang.replace("-", "_")  # Altrix uses dash, babel uses underscore.
 
 	locale_dir = get_locale_dir()
 	mo_file = gettext.find(app, locale_dir, (lang,))

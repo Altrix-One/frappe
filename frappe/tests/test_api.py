@@ -15,7 +15,7 @@ from werkzeug.test import TestResponse
 
 import frappe
 from frappe.installer import update_site_config
-from frappe.tests.utils import FrappeTestCase, patch_hooks
+from frappe.tests.utils import AltrixTestCase, patch_hooks
 from frappe.utils import cint, get_site_url, get_test_client, get_url
 
 try:
@@ -84,7 +84,7 @@ resource_key = {
 }
 
 
-class FrappeAPITestCase(FrappeTestCase):
+class AltrixAPITestCase(AltrixTestCase):
 	version = ""  # Empty implies v1
 	TEST_CLIENT = get_test_client()
 
@@ -131,7 +131,7 @@ class FrappeAPITestCase(FrappeTestCase):
 		return make_request(target=self.TEST_CLIENT.delete, args=(path,), kwargs=kwargs)
 
 
-class TestResourceAPI(FrappeAPITestCase):
+class TestResourceAPI(AltrixAPITestCase):
 	DOCTYPE = "ToDo"
 	GENERATED_DOCUMENTS: typing.ClassVar = []
 
@@ -250,7 +250,7 @@ class TestResourceAPI(FrappeAPITestCase):
 			self.assertIsInstance(data[0], dict)
 
 
-class TestMethodAPI(FrappeAPITestCase):
+class TestMethodAPI(AltrixAPITestCase):
 	def test_ping(self):
 		# test 2: test for /api/method/ping
 		response = self.get(self.method("ping"))
@@ -331,7 +331,7 @@ class TestMethodAPI(FrappeAPITestCase):
 		self.assertEqual(response.json["message"], test_data)
 
 
-class TestReadOnlyMode(FrappeAPITestCase):
+class TestReadOnlyMode(AltrixAPITestCase):
 	"""During migration if read only mode can be enabled.
 	Test if reads work well and writes are blocked"""
 
@@ -358,7 +358,7 @@ class TestReadOnlyMode(FrappeAPITestCase):
 		self.assertEqual(response.json["exc_type"], "InReadOnlyMode")
 
 
-class TestWSGIApp(FrappeAPITestCase):
+class TestWSGIApp(AltrixAPITestCase):
 	def test_request_hooks(self):
 		self.addCleanup(lambda: _test_REQ_HOOK.clear())
 
@@ -386,7 +386,7 @@ def after_request(*args, **kwargs):
 	_test_REQ_HOOK["after_request"] = time()
 
 
-class TestResponse(FrappeAPITestCase):
+class TestResponse(AltrixAPITestCase):
 	def test_generate_pdf(self):
 		response = self.get(
 			"/api/method/frappe.utils.print_format.download_pdf",

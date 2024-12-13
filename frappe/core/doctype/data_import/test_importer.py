@@ -3,13 +3,13 @@
 import frappe
 from frappe.core.doctype.data_import.importer import Importer
 from frappe.tests.test_query_builder import db_type_is, run_only_if
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import format_duration, getdate
 
 doctype_name = "DocType for Import"
 
 
-class TestImporter(FrappeTestCase):
+class TestImporter(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

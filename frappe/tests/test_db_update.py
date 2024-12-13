@@ -4,11 +4,11 @@ from frappe.core.utils import find
 from frappe.custom.doctype.property_setter.property_setter import make_property_setter
 from frappe.query_builder.utils import db_type_is
 from frappe.tests.test_query_builder import run_only_if
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import cstr
 
 
-class TestDBUpdate(FrappeTestCase):
+class TestDBUpdate(AltrixTestCase):
 	def test_db_update(self):
 		doctype = "User"
 		frappe.reload_doctype("User", force=True)

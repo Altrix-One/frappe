@@ -24,12 +24,12 @@ from unittest.mock import patch
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_fixed
 
 import frappe
-from frappe.frappeclient import FrappeClient
+from frappe.frappeclient import AltrixClient
 from frappe.model.base_document import get_controller
 from frappe.query_builder.utils import db_type_is
-from frappe.tests.test_api import FrappeAPITestCase
+from frappe.tests.test_api import AltrixAPITestCase
 from frappe.tests.test_query_builder import run_only_if
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 from frappe.utils import cint
 from frappe.website.path_resolver import PathResolver
 
@@ -37,7 +37,7 @@ TEST_USER = "test@example.com"
 
 
 @run_only_if(db_type_is.MARIADB)
-class TestPerformance(FrappeTestCase):
+class TestPerformance(AltrixTestCase):
 	def reset_request_specific_caches(self):
 		# To simulate close to request level of handling
 		frappe.destroy()  # releases everything on frappe.local
@@ -133,7 +133,7 @@ class TestPerformance(FrappeTestCase):
 		FAILURE_THREASHOLD = 0.1
 
 		req_count = 1000
-		client = FrappeClient(self.HOST, "Administrator", self.ADMIN_PASSWORD)
+		client = AltrixClient(self.HOST, "Administrator", self.ADMIN_PASSWORD)
 
 		start = time.perf_counter()
 		for _ in range(req_count):
@@ -205,7 +205,7 @@ class TestPerformance(FrappeTestCase):
 
 
 @run_only_if(db_type_is.MARIADB)
-class TestOverheadCalls(FrappeAPITestCase):
+class TestOverheadCalls(AltrixAPITestCase):
 	"""Test that typical redis and db calls remain same overtime.
 
 	If this tests fail on your PR, make sure you're not introducing something in hot-path of these

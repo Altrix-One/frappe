@@ -84,7 +84,7 @@ def get_assets_link(frappe_head) -> str:
 
 	if tag:
 		# if tag exists, download assets from github release
-		url = f"https://github.com/frappe/frappe/releases/download/{tag}/assets.tar.gz"
+		url = f"https://github.com/epiusegs/frappe/releases/download/{tag}/assets.tar.gz"
 	else:
 		url = f"http://assets.frappeframework.com/{frappe_head}.tar.gz"
 
@@ -104,7 +104,7 @@ def fetch_assets(url, frappe_head):
 	if not assets_archive:
 		raise AssetsNotDownloadedError(f"Assets could not be retrived from {url}")
 
-	click.echo(click.style("✔", fg="green") + f" Downloaded Frappe assets from {url}")
+	click.echo(click.style("✔", fg="green") + f" Downloaded Altrix assets from {url}")
 
 	return assets_archive
 
@@ -134,7 +134,7 @@ def setup_assets(assets_archive):
 
 
 def download_frappe_assets(verbose=True):
-	"""Downloads and sets up Frappe assets if they exist based on the current
+	"""Downloads and sets up Altrix assets if they exist based on the current
 	commit HEAD.
 	Returns True if correctly setup else returns False.
 	"""

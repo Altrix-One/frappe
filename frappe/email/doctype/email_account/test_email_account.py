@@ -13,10 +13,10 @@ from frappe.desk.form.load import get_attachments
 from frappe.email.doctype.email_account.email_account import notify_unreplied
 from frappe.email.email_body import get_message_id
 from frappe.email.receive import Email, InboundMail, SentEmailInInboxError
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 
-class TestEmailAccount(FrappeTestCase):
+class TestEmailAccount(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
@@ -454,7 +454,7 @@ class TestEmailAccount(FrappeTestCase):
 			email_account.receive()
 
 
-class TestInboundMail(FrappeTestCase):
+class TestInboundMail(AltrixTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

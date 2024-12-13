@@ -184,7 +184,7 @@ class TypeExporter:
 
 	@staticmethod
 	def _validate_code(code) -> bool:
-		"""Make sure whatever code Frappe adds dynamically is valid python."""
+		"""Make sure whatever code Altrix adds dynamically is valid python."""
 		try:
 			ast.parse(code)
 			return True

@@ -614,7 +614,7 @@ def _start_sentry():
 	from sentry_sdk.integrations.excepthook import ExcepthookIntegration
 	from sentry_sdk.integrations.modules import ModulesIntegration
 
-	from frappe.utils.sentry import FrappeIntegration, before_send
+	from frappe.utils.sentry import AltrixIntegration, before_send
 
 	integrations = [
 		AtexitIntegration(),
@@ -628,7 +628,7 @@ def _start_sentry():
 	kwargs = {}
 
 	if os.getenv("ENABLE_SENTRY_DB_MONITORING"):
-		integrations.append(FrappeIntegration())
+		integrations.append(AltrixIntegration())
 		experiments["record_sql_params"] = True
 
 	if tracing_sample_rate := os.getenv("SENTRY_TRACING_SAMPLE_RATE"):

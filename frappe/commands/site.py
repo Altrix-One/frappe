@@ -301,7 +301,7 @@ def restore_backup(
 
 	if is_partial(sql_file_path):
 		click.secho(
-			"Partial Backup file detected. You cannot use a partial file to restore a Frappe site.",
+			"Partial Backup file detected. You cannot use a partial file to restore a Altrix site.",
 			fg="red",
 		)
 		click.secho(
@@ -373,7 +373,7 @@ def partial_restore(context, sql_file_path, verbose, encryption_key=None):
 		with decrypt_backup(sql_file_path, key):
 			if not is_partial(sql_file_path):
 				click.secho(
-					"Full backup file detected. Use `bench restore` to restore a Frappe Site.",
+					"Full backup file detected. Use `bench restore` to restore a Altrix Site.",
 					fg="red",
 				)
 				sys.exit(1)
@@ -388,7 +388,7 @@ def partial_restore(context, sql_file_path, verbose, encryption_key=None):
 	else:
 		if not is_partial(sql_file_path):
 			click.secho(
-				"Full backup file detected. Use `bench restore` to restore a Frappe Site.",
+				"Full backup file detected. Use `bench restore` to restore a Altrix Site.",
 				fg="red",
 			)
 			sys.exit(1)
@@ -1191,7 +1191,7 @@ def browse(context, site, user=None):
 @click.command("start-recording")
 @pass_context
 def start_recording(context):
-	"""Start Frappe Recorder."""
+	"""Start Altrix Recorder."""
 	import frappe.recorder
 
 	for site in context.sites:
@@ -1205,7 +1205,7 @@ def start_recording(context):
 @click.command("stop-recording")
 @pass_context
 def stop_recording(context):
-	"""Stop Frappe Recorder."""
+	"""Stop Altrix Recorder."""
 	import frappe.recorder
 
 	for site in context.sites:

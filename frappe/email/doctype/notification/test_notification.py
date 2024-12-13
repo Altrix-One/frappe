@@ -7,7 +7,7 @@ import frappe
 import frappe.utils
 import frappe.utils.scheduler
 from frappe.desk.form import assign_to
-from frappe.tests.utils import FrappeTestCase
+from frappe.tests.utils import AltrixTestCase
 
 test_dependencies = ["User", "Notification"]
 
@@ -21,7 +21,7 @@ def get_test_notification(config):
 		notification.delete()
 
 
-class TestNotification(FrappeTestCase):
+class TestNotification(AltrixTestCase):
 	def setUp(self):
 		frappe.db.delete("Email Queue")
 		frappe.set_user("test@example.com")
